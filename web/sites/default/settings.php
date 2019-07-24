@@ -779,9 +779,9 @@ $settings['entity_update_backup'] = TRUE;
 # }
 $config_directories['sync'] = '../config/sync';
 $databases['default']['default'] = array (
-  'database' => 'inventaire',
+  'database' => 'drupal',
   'username' => 'phpadmin',
-  'password' => 'admin',
+  'password' => 'root',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
