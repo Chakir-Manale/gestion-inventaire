@@ -1,0 +1,4 @@
+name: inventaire
+type: module
+core: 8.x
+description: app de gestion de stock des ordinateurs;
