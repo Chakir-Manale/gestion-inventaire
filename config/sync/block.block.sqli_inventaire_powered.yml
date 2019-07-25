@@ -1,0 +1,22 @@
+uuid: e761f164-42aa-4f0e-8a5b-c17d103552c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sqli_inventaire
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: sqli_inventaire_powered
+theme: sqli_inventaire
+region: header
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: fb873139-a8df-4912-bdba-cdd482cf1c29
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sqli_inventaire
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: sqli_inventaire_content
+theme: sqli_inventaire
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

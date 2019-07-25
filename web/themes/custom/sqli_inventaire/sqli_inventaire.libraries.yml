@@ -1,0 +1,18 @@
+global-styling-and-scripts:
+  css:
+    theme:
+      assets/css/vendors.min.css: {}
+      assets/css/main.min.css: {}
+  js:
+    assets/js/vendors.min.js: {}
+    assets/js/main.min.js: {}
+  dependencies:
+  - core/jquery
+  - core/drupal.ajax
+  - core/drupal
+  - core/drupalSettings
+  - core/jquery.once
+  - core/jquery.ui
+  - core/jquery.ui.accordion
+  - core/jquery.ui.mouse
+  - core/jquery.ui.touch-punch

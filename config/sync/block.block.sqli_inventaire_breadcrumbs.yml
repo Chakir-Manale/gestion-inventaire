@@ -1,0 +1,22 @@
+uuid: f5f841e3-272d-4f3d-b8b4-248d713be8ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sqli_inventaire
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: sqli_inventaire_breadcrumbs
+theme: sqli_inventaire
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

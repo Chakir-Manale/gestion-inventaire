@@ -1,0 +1,12 @@
+name: sqli inventaire
+type: theme
+base theme: bartik
+core: 8.x
+libraries:
+  - sqli_inventaire/global-styling-and-scripts
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  footer: 'Footer'

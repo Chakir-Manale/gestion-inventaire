@@ -1,0 +1,88 @@
+/* fonts
+@include font-face("MiniSSF Bold", "../fonts/MINI_Sans_Serif_Bold/MINI_Sans_Serif_Bold"); 
+*/
+[class*="border"] {
+  border: 1px solid #000 !important; }
+
+.border-5 {
+  border: 5px solid #000 !important; }
+
+.border-top {
+  border-width: 0 !important;
+  border-top: 1px solid #000 !important; }
+
+.border-bottom {
+  border-width: 0 !important;
+  border-bottom: 1px solid #000 !important; }
+
+.border-top-5 {
+  border-width: 0 !important;
+  border-top-width: 5px !important; }
+
+.border-bottom-5 {
+  border-width: 0 !important;
+  border-bottom-width: 5px !important; }
+
+.border-bottom-10 {
+  border-width: 0 !important;
+  border-bottom-width: 10px !important; }
+
+.h-rotate-180 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.no-padding {
+  padding: 0;
+  margin: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  color: #000;
+  margin: 0;
+  padding: 0; }
+
+.main-content {
+  max-width: 1280px;
+  margin: auto;
+  overflow: hidden; }
+
+ul, ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.no-padding {
+  margin: 0;
+  padding: 0; }
+
+.h1 {
+  line-height: 2.6rem;
+  font-size: 2.6rem;
+  text-align: left;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
+@media screen and (max-width: 1199px) {
+  .display-desktop {
+    display: none !important; } }
+
+@media screen and (min-width: 1200px) {
+  .display-mobile {
+    display: none !important; } }
+
+.nav-menu {
+  display: block; }
+
+.header {
+  display: block; }
+
+.footer {
+  display: block; }
+
+/*# sourceMappingURL=main.min.css.map */
