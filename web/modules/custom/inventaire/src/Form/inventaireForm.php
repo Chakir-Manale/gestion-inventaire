@@ -185,10 +185,6 @@ class inventaireForm extends FormBase {
     $Casque = $fields['Casque'];
     $num_serie_casque = $fields['num_serie_casque'];
 */
-    $query = \Drupal::database();
-    $query->update('inventaireSc')
-        ->fields($fields)
-        ->execute();
     drupal_set_message("Bien Ajouté ! ");
     $form_state->setRedirect('');
 
