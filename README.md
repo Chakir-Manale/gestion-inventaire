@@ -30,7 +30,7 @@ Nous utilisons GULP afin de gérer nos fichiers HTML / CSS / JS
     - serveur:
 En lancant la commande "npm start". Un serveur sera lancé en local avec Browser-sync et toutes les modifications de css / js seront visisble automatiquement.
     - build: 
-En lancant la commande "npm run deploy" les fichiers css / js seront minifiés et aggrégés dans Drupal
+En lancant la commande "npm run build" les fichiers css / js seront minifiés et aggrégés dans Drupal
 4. Fichiers:
     - Les fichiers SCSS se trouvent dans le répertoire "web/themes/custom/sqli_inventaire/assets/scss"
     - Les fichiers javascripts se trouvent dans le répertoire "web/themes/custom/sqli_inventaire/assets/js"
