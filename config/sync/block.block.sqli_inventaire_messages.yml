@@ -1,0 +1,22 @@
+uuid: 37c5a2e1-75fd-4066-b987-c12d4d4d4018
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sqli_inventaire
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: sqli_inventaire_messages
+theme: sqli_inventaire
+region: header
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

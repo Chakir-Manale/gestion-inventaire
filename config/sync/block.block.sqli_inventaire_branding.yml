@@ -1,0 +1,25 @@
+uuid: 0c2f71a1-4d95-4a11-86e9-c768e7518fb5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sqli_inventaire
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: sqli_inventaire_branding
+theme: sqli_inventaire
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }
