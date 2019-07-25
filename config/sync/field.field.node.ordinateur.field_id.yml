@@ -1,0 +1,23 @@
+uuid: 9f647d33-e293-41b9-926a-46e4a5c2e9cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_id
+    - node.type.ordinateur
+id: node.ordinateur.field_id
+field_name: field_id
+entity_type: node
+bundle: ordinateur
+label: ID
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

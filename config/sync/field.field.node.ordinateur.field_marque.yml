@@ -1,0 +1,24 @@
+uuid: b558dedb-b83d-44b9-b54a-9c77913ab2b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marque
+    - node.type.ordinateur
+  module:
+    - text
+id: node.ordinateur.field_marque
+field_name: field_marque
+entity_type: node
+bundle: ordinateur
+label: Marque
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: DELL
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,244 @@
+uuid: ad3ea986-1dc6-40b2-91cb-e0dc0da236ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ordinateur.field_adaptateur
+    - field.field.node.ordinateur.field_capacitehdd
+    - field.field.node.ordinateur.field_casque
+    - field.field.node.ordinateur.field_clavier
+    - field.field.node.ordinateur.field_cpu
+    - field.field.node.ordinateur.field_date_affectation
+    - field.field.node.ordinateur.field_date_fin_garantie
+    - field.field.node.ordinateur.field_date_livraison
+    - field.field.node.ordinateur.field_id
+    - field.field.node.ordinateur.field_marque
+    - field.field.node.ordinateur.field_modele
+    - field.field.node.ordinateur.field_nom_collab
+    - field.field.node.ordinateur.field_num_serie
+    - field.field.node.ordinateur.field_num_serie_casque
+    - field.field.node.ordinateur.field_num_serie_ecran
+    - field.field.node.ordinateur.field_prenom_collab
+    - field.field.node.ordinateur.field_ram
+    - field.field.node.ordinateur.field_souris
+    - field.field.node.ordinateur.field_taille_ecran
+    - field.field.node.ordinateur.field_type
+    - field.field.node.ordinateur.field_typehdd
+    - node.type.ordinateur
+  module:
+    - datetime
+    - path
+    - text
+id: node.ordinateur.default
+targetEntityType: node
+bundle: ordinateur
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_adaptateur:
+    weight: 141
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_capacitehdd:
+    weight: 136
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_casque:
+    weight: 142
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_clavier:
+    weight: 140
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_cpu:
+    weight: 133
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_date_affectation:
+    weight: 132
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_fin_garantie:
+    weight: 131
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_livraison:
+    weight: 130
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_id:
+    weight: 129
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_marque:
+    weight: 125
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_modele:
+    weight: 127
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_nom_collab:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_num_serie:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_num_serie_casque:
+    weight: 143
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_num_serie_ecran:
+    weight: 138
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_prenom_collab:
+    weight: 123
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_ram:
+    weight: 134
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_souris:
+    weight: 139
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_taille_ecran:
+    weight: 137
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_type:
+    weight: 126
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_typehdd:
+    weight: 135
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

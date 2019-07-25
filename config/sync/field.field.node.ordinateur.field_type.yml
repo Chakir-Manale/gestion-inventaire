@@ -1,0 +1,27 @@
+uuid: c55970f7-3fad-4a19-96b8-e73664e77d61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.ordinateur
+  module:
+    - text
+id: node.ordinateur.field_type
+field_name: field_type
+entity_type: node
+bundle: ordinateur
+label: Type
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: Fixe
+    format: basic_html
+  -
+    value: Portable
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text

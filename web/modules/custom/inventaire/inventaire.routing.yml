@@ -1,0 +1,7 @@
+inventaire.inventaire_form:
+  path: '/inventaire/form/inventaireForm'
+  defaults:
+    _form: '\Drupal\inventaire\Form\inventaireForm'
+    _title: 'inventaireForm'
+  requirements:
+    _access: 'TRUE'

@@ -1,0 +1,24 @@
+uuid: bf2a0a41-6940-4602-8cbd-1e656c256ea2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_livraison
+    - node.type.ordinateur
+  module:
+    - datetime
+id: node.ordinateur.field_date_livraison
+field_name: field_date_livraison
+entity_type: node
+bundle: ordinateur
+label: Date_Livraison
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

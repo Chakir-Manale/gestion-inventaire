@@ -1,0 +1,25 @@
+uuid: 5dd004ac-83a0-45f2-ad83-766b187af30f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_capacitehdd
+    - node.type.ordinateur
+id: node.ordinateur.field_capacitehdd
+field_name: field_capacitehdd
+entity_type: node
+bundle: ordinateur
+label: CapaciteHDD
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 510
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

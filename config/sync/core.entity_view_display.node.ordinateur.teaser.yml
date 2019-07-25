@@ -1,0 +1,26 @@
+uuid: c34051cc-e20f-43a4-bf44-6037397bda52
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ordinateur.field_marque
+    - field.field.node.ordinateur.field_nom_collab
+    - field.field.node.ordinateur.field_prenom_collab
+    - node.type.ordinateur
+  module:
+    - user
+id: node.ordinateur.teaser
+targetEntityType: node
+bundle: ordinateur
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_marque: true
+  field_nom_collab: true
+  field_prenom_collab: true

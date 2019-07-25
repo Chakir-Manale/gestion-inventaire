@@ -1,0 +1,21 @@
+uuid: a5c9dae6-1d4a-4c65-8d94-e439b65f4819
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_num_serie_ecran
+    - node.type.ordinateur
+  module:
+    - text
+id: node.ordinateur.field_num_serie_ecran
+field_name: field_num_serie_ecran
+entity_type: node
+bundle: ordinateur
+label: Num_Serie_Ecran
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
