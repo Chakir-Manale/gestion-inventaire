@@ -1,0 +1,14 @@
+.gs-article{
+    font-family: $sans-serif;
+
+    &_title {
+        color: $blue-highlight;
+        font-size: $text-size-24;
+    }
+}
+.gs-menu{        
+    &_item {
+        font-size: $text-size-14;
+        padding: 0.4rem;
+    }
+}

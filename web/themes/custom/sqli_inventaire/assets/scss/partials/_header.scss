@@ -1,4 +1,28 @@
-.header {
-    //footer style
-    display: block;
+.gs-header {
+
+    display: flex;
+    justify-content: space-between;
+    
+    &_logo {
+        display: inline-block;
+
+        .gs-logo {
+            width: 10rem;
+            height: 6rem;
+        }
+
+        .gs-slogan {
+            font-size: $text-size-16;
+        }
+
+    }
+
+    &_menu{
+        .gs-menu{
+            &_item {
+                font-size: $text-size-18;
+                padding: 0.4rem;
+            }
+        }
+    }
 }

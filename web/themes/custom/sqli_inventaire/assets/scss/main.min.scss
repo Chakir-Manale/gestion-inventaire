@@ -7,8 +7,12 @@
 @import "partials/nav";
 @import "partials/header";
 @import "partials/footer";
+@import "partials/article";
+
 
 //Components
+@import "components/form";
 
 //pages
 @import "pages/accueil";
+@import "pages/ajout";

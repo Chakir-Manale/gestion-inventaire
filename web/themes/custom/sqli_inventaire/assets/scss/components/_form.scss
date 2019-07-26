@@ -1,0 +1,37 @@
+fieldset{
+    border: 0.2rem solid #c1c1c1;
+    padding: 3rem;
+    margin: 2rem auto 0 auto;
+    width: 80rem;
+    max-width: 100rem; 
+}
+
+.gs-form{
+    display: grid; 
+    grid-template-columns: 1fr minmax(auto, 30em) 1fr;
+    min-height: 100vh; 
+    place-items: center;
+    justify-items: stretch;
+    grid-column: 2;
+    
+    &_group{
+        .label{
+            font-size: 1.4rem;
+            text-align: right;
+            display: block;
+            padding: 0.5em 1.5em 0.5em 0;
+  
+        }
+        .form-control{
+                align-items: left;
+                border: 1px solid #9c9c9c;
+                width: 100%;
+                padding: 0.4rem;
+                margin-bottom: 0.5rem;
+        }
+    }      
+    .submit:hover{
+            background: green;
+        } 
+} 
+
