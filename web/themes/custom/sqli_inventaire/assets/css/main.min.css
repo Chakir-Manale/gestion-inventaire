@@ -1,6 +1,7 @@
 /* fonts
 @include font-face("MiniSSF Bold", "../fonts/MINI_Sans_Serif_Bold/MINI_Sans_Serif_Bold"); 
 */
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
 [class*="border"] {
   border: 1px solid #000 !important; }
 
@@ -79,10 +80,82 @@ ul, ol, li {
 .nav-menu {
   display: block; }
 
-.header {
-  display: block; }
+.gs-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .gs-header_logo {
+    display: inline-block; }
+    .gs-header_logo .gs-logo {
+      width: 10rem;
+      height: 6rem; }
+    .gs-header_logo .gs-slogan {
+      font-size: 1.6rem; }
+  .gs-header_menu .gs-menu_item {
+    font-size: 1.8rem;
+    padding: 0.4rem; }
 
 .footer {
   display: block; }
+
+.gs-article {
+  font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif; }
+  .gs-article_title {
+    color: rgba(0, 133, 172, 0.3);
+    font-size: 2.4rem; }
+
+.gs-menu_item {
+  font-size: 1.4rem;
+  padding: 0.4rem; }
+
+fieldset {
+  border: 0.2rem solid #c1c1c1;
+  padding: 3rem;
+  margin: 2rem auto 0 auto;
+  width: 80rem;
+  max-width: 100rem; }
+
+.gs-form {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 30em) 1fr;
+  min-height: 100vh;
+  place-items: center;
+  justify-items: stretch;
+  grid-column: 2; }
+  .gs-form_group .label {
+    font-size: 1.4rem;
+    text-align: right;
+    display: block;
+    padding: 0.5em 1.5em 0.5em 0; }
+  .gs-form_group .form-control {
+    -webkit-box-align: left;
+    -webkit-align-items: left;
+    -moz-box-align: left;
+    -ms-flex-align: left;
+    align-items: left;
+    border: 1px solid #9c9c9c;
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem; }
+  .gs-form .submit:hover {
+    background: green; }
+
+.gs-title {
+  text-align: center; }
+
+.gs-span {
+  font-family: "Seaweed Script";
+  color: royalblue;
+  text-align: center;
+  font-size: 4.5rem;
+  position: relative;
+  padding: 0 0.3em; }
 
 /*# sourceMappingURL=main.min.css.map */
