@@ -1,14 +1,31 @@
 .gs-article{
-    font-family: $sans-serif;
-
+    font-family: $serif;
+    
     &_title {
         color: $blue-highlight;
-        font-size: $text-size-24;
-    }
+        font-size: $text-size-24;     
+    }  
+    &_img { width: 64rem; height: 45rem; }
+   
+}
+.gs-article h1{
+    text-align: justify;
+    font-size: $text-size-30;
+}
+
+.gs-article h2{
+    text-align: justify;
+    font-size: $title-size-28;
 }
 .gs-menu{        
     &_item {
         font-size: $text-size-14;
         padding: 0.4rem;
     }
+}
+.gs-btn{
+    width: 26rem;
+    height: 6rem;
+    font-size: xx-large;
+    /* margin-right: 8rem; */
 }

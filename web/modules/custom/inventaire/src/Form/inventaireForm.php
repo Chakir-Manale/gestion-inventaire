@@ -22,17 +22,17 @@ class inventaireForm extends FormBase {
   {
     $form['nom_collab'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Nom_Collab'),
+      '#title' => $this->t('Nom_Collab :'),
       '#maxlength' => 50,      
     ];
     $form['prenom_collab'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Prenom_Collab'),
+      '#title' => $this->t('Prenom_Collab :'),
       '#maxlength' => 50,
     ];
     $form['type_machine'] = [
       '#type' => 'select',
-      '#title' => $this->t('type_machine'),
+      '#title' => $this->t('type_machine :'),
       '#options' => array(
         'Fixe' => t('Fixe'),
         'Portable' => t('Portable'),
@@ -40,50 +40,49 @@ class inventaireForm extends FormBase {
     ];
     $form['marque'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Marque'),
+      '#title' => $this->t('Marque :'),
       '#default_value' => $this->configuration['DELL'],
     ];
     $form['model'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Modele'),
+      '#title' => $this->t('Modele :'),
       '#maxlength' => 50,
     ];
       $form['num_serie'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Num_Serie'),
+      '#title' => $this->t('Num_Serie :'),
       '#maxlength' => 50,
     ];
     $form['ID'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('ID_inventaire'),
+      '#title' => $this->t('ID_inventaire :'),
       '#maxlength' => 50,
     ];
     $form['Date_Livraison'] = [
       '#type' => 'Date',
-      '#title' => $this->t('Date_Livraison'),
+      '#title' => $this->t('Date_Livraison :'),
     ];
     $form['Date_Fin_Garantie'] = [
       '#type' => 'Date',
-      '#title' => $this->t('Date_Fin_Garantie'),
+      '#title' => $this->t('Date_Fin_Garantie :'),
     ];
     $form['Date_Affectation'] = [
       '#type' => 'Date',
-      '#title' => $this->t('Date_Affectation'),
+      '#title' => $this->t('Date_Affectation :'),
     ];
     $form['CPU'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('CPU'),
+      '#title' => $this->t('CPU :'),
       '#maxlength' => 50,
     ];
     $form['RAM'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('RAM'),
+      '#title' => $this->t('RAM :'),
       '#maxlength' => 50,
     ];
     $form['TypeHDD'] = [
-      '#title' => $this->t('TypeHDD'),
+      '#title' => $this->t('TypeHDD :'),
       '#type' => 'select',
-      '#title' => $this->t('TypeHDD'),
       '#options' => array(
         'SSD_M2' => t('SSD_M2'),
         'SSD' => t('SSD'),
@@ -91,9 +90,8 @@ class inventaireForm extends FormBase {
       ),
     ];
     $form['Capacite'] = [
-      '#title' => $this->t('Capacite'),
+      '#title' => $this->t('Capacite :'),
       '#type' => 'select',
-      '#title' => $this->t('Capacite'),
       '#options' => array(
         '1 To' => t('1 To'),
         '500 Go' => t('500 Go'),
@@ -103,37 +101,37 @@ class inventaireForm extends FormBase {
     ];
     $form['Taille_Ecran'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Taille_Ecran'),
+      '#title' => $this->t('Taille_Ecran :'),
       '#maxlength' => 50,
     ];
     $form['num_serie_ecran'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Num_Serie_ecran'),
+      '#title' => $this->t('Num_Serie_ecran :'),
       '#maxlength' => 50,
     ];
     $form['Souris'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Souris'),
+      '#title' => $this->t('Souris :'),
       '#default_value' => $this->configuration['DELL'],
       '#maxlength' => 50,
     ];
     $form['Clavier'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Clavier'),
+      '#title' => $this->t('Clavier :'),
       '#default_value' => $this->configuration['DELL'],
       '#maxlength' => 50,
     ];
     $form['Adaptateur'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Adaptateur'),
+      '#title' => $this->t('Adaptateur :'),
     ];
     $form['Casque'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Casque'),
+      '#title' => $this->t('Casque :'),
     ];
     $form['num_serie_casque'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Num_Serie_casque'),
+      '#title' => $this->t('Num_Serie_casque :'),
       '#maxlength' => 50,
     ];
 

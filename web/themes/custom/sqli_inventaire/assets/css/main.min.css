@@ -45,7 +45,8 @@ html {
 body {
   color: #000;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: "Source Code Pro", Courier, mono; }
 
 .main-content {
   max-width: 1280px;
@@ -106,24 +107,45 @@ ul, ol, li {
   display: block; }
 
 .gs-article {
-  font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif; }
+  font-family: Merriweather, Georgia, "Times New Roman", serif; }
   .gs-article_title {
     color: rgba(0, 133, 172, 0.3);
     font-size: 2.4rem; }
+  .gs-article_img {
+    width: 64rem;
+    height: 45rem; }
+
+.gs-article h1 {
+  text-align: justify;
+  font-size: 3rem; }
+
+.gs-article h2 {
+  text-align: justify;
+  font-size: 2.8rem; }
 
 .gs-menu_item {
   font-size: 1.4rem;
   padding: 0.4rem; }
+
+.gs-btn {
+  width: 26rem;
+  height: 6rem;
+  font-size: xx-large;
+  /* margin-right: 8rem; */ }
 
 fieldset {
   border: 0.2rem solid #c1c1c1;
   padding: 3rem;
   margin: 2rem auto 0 auto;
   width: 80rem;
-  max-width: 100rem; }
+  max-width: 100rem;
+  background: -webkit-gradient(linear, left top, right bottom, from(white), to(lightslategrey));
+  background: -webkit-linear-gradient(left top, white, lightslategrey);
+  background: -moz-linear-gradient(left top, white, lightslategrey);
+  background: -o-linear-gradient(left top, white, lightslategrey);
+  background: linear-gradient(to right bottom, white, lightslategrey); }
 
 .gs-form {
-  display: grid;
   grid-template-columns: 1fr minmax(auto, 30em) 1fr;
   min-height: 100vh;
   place-items: center;
@@ -133,7 +155,9 @@ fieldset {
     font-size: 1.4rem;
     text-align: right;
     display: block;
-    padding: 0.5em 1.5em 0.5em 0; }
+    padding: 0.5em 1.5em 0.5em 0;
+    font-weight: bold;
+    font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif; }
   .gs-form_group .form-control {
     -webkit-box-align: left;
     -webkit-align-items: left;
@@ -144,8 +168,21 @@ fieldset {
     width: 100%;
     padding: 0.4rem;
     margin-bottom: 0.5rem; }
+  .gs-form .submit {
+    padding: 0.4rem;
+    font-size: 2rem;
+    width: 16rem;
+    height: 4.4rem;
+    float: right; }
   .gs-form .submit:hover {
-    background: green; }
+    background: green;
+    border: green; }
+
+.gs-table th {
+  font-weight: bold;
+  font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif;
+  font-size: 1.4rem;
+  color: midnightblue; }
 
 .gs-title {
   text-align: center; }

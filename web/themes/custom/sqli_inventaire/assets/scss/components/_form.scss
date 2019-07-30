@@ -4,10 +4,10 @@ fieldset{
     margin: 2rem auto 0 auto;
     width: 80rem;
     max-width: 100rem; 
+    background: linear-gradient(to right bottom, white , lightslategrey );
 }
 
 .gs-form{
-    display: grid; 
     grid-template-columns: 1fr minmax(auto, 30em) 1fr;
     min-height: 100vh; 
     place-items: center;
@@ -16,11 +16,12 @@ fieldset{
     
     &_group{
         .label{
-            font-size: 1.4rem;
+            font-size: $text-size-14;
             text-align: right;
             display: block;
             padding: 0.5em 1.5em 0.5em 0;
-  
+            font-weight: bold;
+            font-family: $sans-serif;
         }
         .form-control{
                 align-items: left;
@@ -28,10 +29,17 @@ fieldset{
                 width: 100%;
                 padding: 0.4rem;
                 margin-bottom: 0.5rem;
+             
         }
     }      
-    .submit:hover{
-            background: green;
-        } 
+    .submit{
+        padding: 0.4rem;
+        font-size: $text-size-20;
+        width: 16rem;
+        height: 4.4rem;
+        float: right;
+    }
+    .submit:hover{ background: green; border: green;   } 
+
 } 
 
