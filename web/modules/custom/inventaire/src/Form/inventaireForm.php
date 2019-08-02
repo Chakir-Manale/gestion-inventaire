@@ -4,6 +4,7 @@ namespace Drupal\inventaire\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Class inventaireForm.
@@ -59,15 +60,15 @@ class inventaireForm extends FormBase {
       '#maxlength' => 50,
     ];
     $form['Date_Livraison'] = [
-      '#type' => 'Date',
+      '#type' => 'date',
       '#title' => $this->t('Date_Livraison :'),
     ];
     $form['Date_Fin_Garantie'] = [
-      '#type' => 'Date',
+      '#type' => 'date',
       '#title' => $this->t('Date_Fin_Garantie :'),
     ];
     $form['Date_Affectation'] = [
-      '#type' => 'Date',
+      '#type' => 'date',
       '#title' => $this->t('Date_Affectation :'),
     ];
     $form['CPU'] = [
@@ -160,37 +161,44 @@ class inventaireForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) 
   {
     $fields = $form_state -> getValues();
-/*
-    $nom_collab = $fields['nom_collab'];
-    $prenom_collab = $fields['prenom_collab'];
-    $type_machine = $fields['type_machine'];
-    $marque = $fields['marque'];
-    $model = $fields['model'];
-    $num_serie = $fields['model'];
-    $ID = $fields['ID'];
-    $Date_Livraison = $fields['Date_Livraison'];
-    $Date_Fin_Garantie = $fields['Date_Fin_Garantie'];
-    $Date_Affectation = $fields['Date_Affectation'];
-    $CPU = $fields['CPU'];
-    $RAM = $fields['RAM'];
-    $TypeHDD = $fields['TypeHDD'];
-    $Capacite = $fields['Capacite'];
-    $Taille_Ecran = $fields['Taille_Ecran'];
-    $num_serie_ecran = $fields['num_serie_ecran'];
-    $Souris = $fields['Souris'];
-    $Clavier = $fields['Clavier'];
-    $Adaptateur = $fields['Adaptateur'];
-    $Casque = $fields['Casque'];
-    $num_serie_casque = $fields['num_serie_casque'];
-*/
-    drupal_set_message("Bien Ajouté ! ");
-    $form_state->setRedirect('');
+      
+    $node = \Drupal::entityTypeManager()->getStorage('node')->create(
+              [ 'type' => 'ordinateurs',
+                'title' => 'Ordinateur ',
+                'field_nom_collab' => $fields['nom_collab'],     
+                'field_prenom_collab' =>  $fields['prenom_collab'],    
+                'field_type' => $fields['type_machine'],
+                'field_marque' => $fields['marque'],              
+                'field_modele' => $fields['model'],       
+                'field_num_serie' => $fields['model'],            
+                'field_id' => $fields['ID'],              
+                'field_date_livraison' => $fields['Date_Livraison'],            
+                'field_date_fin_garantie' => $fields['Date_Fin_Garantie'],            
+                'field_date_affectation' => $fields['Date_Affectation'],           
+                'field_cpu' => $fields['CPU'],           
+                'field_ram' => $fields['RAM'],              
+                'field_typehdd' => $fields['TypeHDD'],          
+                'field_capacitehdd' => $fields['Capacite'],      
+                'field_taille_ecran' => $fields['Taille_Ecran'],       
+                'field_num_serie_ecran' => $fields['num_serie_ecran'],            
+                'field_s' => $fields['Souris'],       
+                'field_clavier' => $fields['Clavier'],          
+                'field_adaptateur' => $fields['Adaptateur'],         
+                'field_casque' => $fields['Casque'],
+                'field_num_serie_casque' => $fields['num_serie_casque']      
+               ]);
+             
+               try {
+                $node->save();
+                $success = TRUE;
+                 drupal_set_message('Added the node.'.$node->id());
+              }
+              catch (Exception $e) {
+              
+              drupal_set_message('Could not update the node.', 'error');
+              }
+ 
 
-    /* foreach ($form_state->getValues() as $key => $value) {
-      \Drupal::messenger()->addMessage($key . ': ' . ($key === 'text_format'?$value['value']:$value));
-   */
-   
-   
-    }
+            }
+
 }
-

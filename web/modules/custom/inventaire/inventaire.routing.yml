@@ -5,3 +5,11 @@ inventaire.inventaire_form:
     _title: 'Nouveau Produit'
   requirements:
     _access: 'TRUE'
+
+inventaire.edit_form:
+  path: '/inventaire/form/editForm/{id}'
+  defaults:
+    _form: '\Drupal\inventaire\Form\editForm'
+    _title: 'màj Produit'
+  requirements:
+    _access: 'TRUE'

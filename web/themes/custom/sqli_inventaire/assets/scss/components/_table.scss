@@ -1,6 +1,28 @@
+.gs-table{
+    margin-top: 3rem;
+
+    .action-view{
+        width: 13rem;
+    }
+    .action-edit{
+        display: none;
+    }
+    .action-delete{
+        display: none;
+    }
+ }
+
 .gs-table th{
     font-weight: bold;
     font-family: $sans-serif;
-    font-size: $text-size-14;
-    color: midnightblue;
-}
+    font-size: $text-size-18;
+    color: midnightblue;   
+ }
+
+.gs-table tr{
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    font-size: 1.7rem;
+    font-family: sans-serif;
+ }

@@ -72,47 +72,42 @@
  * @ingroup themeable
  */
 #}
-  
+ 
 <article{{ attributes.addClass('gs-article') }}>
-  <div class="row">
+  <div class="row" style="margin-top: 5rem;">
   
     <div class="col-md-6">
-        <img class="gs-article_img" src="https://gitlab.com/belhadjgi/gestion-de-stock/raw/customBranch/web/themes/custom/sqli_inventaire/logoInvt.png">
+        <img class="gs-article_img" src="/themes/custom/sqli_inventaire/logoInvt.png">
     </div>
     <div class="col-md-6"> 
-     <h1> 
-          Gérer votre inventaire et enregistrez facilement vos stocks 
-            grâce à ce gestionnaire d’inventaire!
-        </h1>
 
-      </br>
-      <h2>
-        Gestionnaire d’inventaire "SQLI-inventaire"(Nom du projet à changer) permet de
-        s’assurer de la précision des inventaires
-        et de la gestion des stocks. Les utilisateurs peuvent ainsi filtrer le stock par soit les 
-        IDs des machines et  type,marque .. afin d’en connaître la quantité en stock...
-        </br>
-        Cliquez sur un boutton ! 
-      </h2>
+      {{content.body}}
           
-            <div class="row" > 
 
-              <div class="col-md-6">
-                <button class="btn btn-primary gs-btn"> Listing Page </button>
-              </div>
+ 
+            <div class="row" style="padding-top: 1.5rem;"> 
 
-              <div class="col-md-6">
-                <button class="btn btn-primary gs-btn"> New product </button>
-              </div>
+                <div class="col-md-6">
+                  <a href="http://dev.inventaire/ordinateurs" onclick="window.open(this.href);return false"> 
+                      <button class="btn btn-primary gs-btn">Listing Page</button> 
+                  </a>
+                </div>
+              
+              {% if logged_in %}
 
+                <div class="col-md-6">
+                  <a href="http://dev.inventaire/inventaire/form/inventaireForm" onclick="window.open(this.href);return false">
+                      <button class="btn btn-primary gs-btn"> New product </button>
+                  </a>
+                </div>
+                
+              {% endif %}
             </div>
         
     </div>
     
   </div>
 
-</br></br>
- 
 {#
   <div{{ content_attributes }}>
     {{ content }}

@@ -1,7 +1,14 @@
+$radius: 7px;
+$skew: 25deg;
+$main-color: tomato;
+
 .gs-header {
     display: flex;
     justify-content: space-between;
-    
+    border-bottom: 2px solid #37135a;
+    padding: 1.5rem 0 1.5rem 0;
+    margin-bottom: 6rem;
+
     &_logo {
         display: inline-block;
 
@@ -12,15 +19,57 @@
 
         .gs-slogan {
             font-size: $text-size-16;
+            color: #37135a;
+            font-weight: bold;
         }
 
     }
 
     &_menu{
+         text-align:center;
+            margin-top: 1rem;
+            
         .gs-menu{
+            display:inline-block;
+            margin:0;
+            padding:0;
+            list-style:none;
+            transform:skew(-$skew);
+            
             &_item {
                 font-size: $text-size-18;
                 padding: 0.4rem;
+                background: #F0F8FF;;
+                float:left;
+                border-right:1px solid #eee;
+                box-shadow:0 1px 1px rgba(0,0,0,0.1);
+                text-transform:uppercase;
+                color:/*#555*/ #37135a;
+                font-weight:bolder;
+                transition:all 0.3s linear;
+            
+                    &:first-child{
+                        border-radius:$radius 0 0 $radius;
+                    }
+                    
+                    &:last-child{
+                        border-right:none;
+                        border-radius:0 $radius $radius 0;
+                    }
+                    
+                    &:hover{
+                        background: #eee;
+                        color: #37135a;
+                    }
+                    
+            }
+            &_link{
+                color: #37135a;
+                display:block;
+                padding: 0em 1.5em;
+                color:inherit;
+                text-decoration:none;
+                transform:skew($skew);
             }
         }
     }

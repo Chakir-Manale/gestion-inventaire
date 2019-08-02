@@ -1,1 +1,36 @@
 <?php
+
+
+function sqli_inventaire_preprocess_node(&$variables) {
+   
+    if (isset($variables['node'])) 
+    {
+         $variables['id'] = $variables['node']->nid;
+    }
+}
+function MODULENAME_variable_info($options) {
+  $variables['nid'] = array(
+    'type' => 'integer',
+    'title' => t('nid', array(), $options),
+    'default' => '',
+    'multidomain' => TRUE,
+  );
+  
+  return $variables;
+}
+
+function sqli_inventaire_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+    if ($form = \Drupal::routeMatch()->getParameter('form')) {
+        $typeName = $form->bundle();
+        $suggestions[] = 'form__' . $typeName;
+    }
+  }
+
+/*
+function sqli_inventaire_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $typeName = $node->bundle();
+        $suggestions[] = 'node__' . $typeName;
+    }
+  }
+*/
