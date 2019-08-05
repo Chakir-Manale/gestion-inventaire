@@ -2,7 +2,7 @@ inventaire.inventaire_form:
   path: '/inventaire/form/inventaireForm'
   defaults:
     _form: '\Drupal\inventaire\Form\inventaireForm'
-    _title: 'Nouveau Produit'
+    _title: 'New Product'
   requirements:
     _access: 'TRUE'
 
@@ -10,6 +10,6 @@ inventaire.edit_form:
   path: '/inventaire/form/editForm/{id}'
   defaults:
     _form: '\Drupal\inventaire\Form\editForm'
-    _title: 'màj Produit'
+    _title: 'Update Product'
   requirements:
     _access: 'TRUE'

@@ -21,15 +21,18 @@ class inventaireForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) 
   {
+#REGION    
     $form['nom_collab'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Nom_Collab :'),
       '#maxlength' => 50,      
+      '#required' => true,
     ];
     $form['prenom_collab'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Prenom_Collab :'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
     $form['type_machine'] = [
       '#type' => 'select',
@@ -38,57 +41,68 @@ class inventaireForm extends FormBase {
         'Fixe' => t('Fixe'),
         'Portable' => t('Portable'),
       ),
+      '#required' => true,
     ];
     $form['marque'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Marque :'),
-      '#default_value' => $this->configuration['DELL'],
+      '#default_value' => $this->t('DELL'),
+      '#required' => true,
     ];
     $form['model'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Modele :'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
       $form['num_serie'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Num_Serie :'),
       '#maxlength' => 50,
+        '#required' => true,
     ];
     $form['ID'] = [
       '#type' => 'textfield',
       '#title' => $this->t('ID_inventaire :'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
     $form['Date_Livraison'] = [
       '#type' => 'date',
       '#title' => $this->t('Date_Livraison :'),
+      '#required' => true,
     ];
     $form['Date_Fin_Garantie'] = [
       '#type' => 'date',
       '#title' => $this->t('Date_Fin_Garantie :'),
+      '#required' => true,
     ];
     $form['Date_Affectation'] = [
       '#type' => 'date',
       '#title' => $this->t('Date_Affectation :'),
+      '#required' => true,
     ];
     $form['CPU'] = [
       '#type' => 'textfield',
       '#title' => $this->t('CPU :'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
     $form['RAM'] = [
       '#type' => 'textfield',
       '#title' => $this->t('RAM :'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
     $form['TypeHDD'] = [
       '#title' => $this->t('TypeHDD :'),
       '#type' => 'select',
       '#options' => array(
-        'SSD_M2' => t('SSD_M2'),
+        'SSD_M2' => t('SSD M2'),
         'SSD' => t('SSD'),
         'SATA' => t('SATA'),
       ),
+      '#required' => true,
     ];
     $form['Capacite'] = [
       '#title' => $this->t('Capacite :'),
@@ -99,41 +113,49 @@ class inventaireForm extends FormBase {
         '512 Go' => t('512 Go'),
         '256 Go' => t('256 Go'),
       ),
+      '#required' => true,
     ];
     $form['Taille_Ecran'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Taille_Ecran :'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
     $form['num_serie_ecran'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Num_Serie_ecran :'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
     $form['Souris'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Souris :'),
-      '#default_value' => $this->configuration['DELL'],
+      '#default_value' => $this->t('DELL'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
     $form['Clavier'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Clavier :'),
-      '#default_value' => $this->configuration['DELL'],
+      '#default_value' => $this->t('DELL'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
     $form['Adaptateur'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Adaptateur :'),
+      '#required' => true,
     ];
     $form['Casque'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Casque :'),
+      '#required' => true,
     ];
     $form['num_serie_casque'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Num_Serie_casque :'),
       '#maxlength' => 50,
+      '#required' => true,
     ];
 
     $form['submit'] = [
@@ -143,16 +165,32 @@ class inventaireForm extends FormBase {
 
     return $form;
   }
+#ENDREGION
 
   /**
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) 
   {
-    foreach ($form_state->getValues() as $key => $value) {
-      // @TODO: Validate fields.
-    }
+   
     parent::validateForm($form, $form_state);
+
+    
+      if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('nom_collab'))) {
+      $form_state->setErrorByName('nom_collab',"Le Nom '".$form_state->getValue('nom_collab')."' n'est pas valide");
+      }
+     
+      if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('prenom_collab'))) {
+        $form_state->setErrorByName('prenom_collab',"Le prenom '".$form_state->getValue('prenom_collab')."' n'est pas valide");
+      }
+    
+      if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('marque'))) {
+        $form_state->setErrorByName('marque',"La marque '".$form_state->getValue('marque')."' n'est pas valide");
+      }  
+
+      if(!preg_match('/^[0-9]{1,3}$/',$form_state->getValue('RAM'))) {
+        $form_state->setErrorByName('RAM',"La RAM '".$form_state->getValue('RAM')."' n'est pas valide");
+      }
   }
 
   /**
@@ -188,14 +226,20 @@ class inventaireForm extends FormBase {
                 'field_num_serie_casque' => $fields['num_serie_casque']      
                ]);
              
-               try {
+              try {
                 $node->save();
                 $success = TRUE;
-                 drupal_set_message('Added the node.'.$node->id());
+                drupal_set_message('Added the node.'.$node->id());
+                 
+                $ChangeNodeTitle = Node::load($node->id()); 
+                $ChangeNodeTitle->title->value = 'Ordinateur '.$node->id();
+                $ChangeNodeTitle->save();
+        
+                $url = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()]);
+                return $form_state->setRedirectUrl($url);
               }
               catch (Exception $e) {
-              
-              drupal_set_message('Could not update the node.', 'error');
+                drupal_set_message('Could not update the node.', 'error');
               }
  
 

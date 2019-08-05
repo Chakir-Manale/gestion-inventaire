@@ -1,23 +1,25 @@
 <?php
 
+/**
+ * Implements hook_views_pre_view().
+ */
+function sqli_inventaire_views_pre_view($view, $display_id, array &$args) {
+  if ($view->id() !== 'user_admin_people') {
+    return;
+  }
+
+  $user_roles = \Drupal::currentUser()->getRoles();
+  if (!in_array('administrator', $user_roles)) {
+    $view->removeHandler($display_id, 'field', 'edit');
+  }
+}
 
 function sqli_inventaire_preprocess_node(&$variables) {
    
-    if (isset($variables['node'])) 
-    {
-         $variables['id'] = $variables['node']->nid;
-    }
 }
-function MODULENAME_variable_info($options) {
-  $variables['nid'] = array(
-    'type' => 'integer',
-    'title' => t('nid', array(), $options),
-    'default' => '',
-    'multidomain' => TRUE,
-  );
-  
-  return $variables;
-}
+
+
+
 
 function sqli_inventaire_theme_suggestions_form_alter(array &$suggestions, array $variables) {
     if ($form = \Drupal::routeMatch()->getParameter('form')) {

@@ -194,6 +194,18 @@ ul, ol, li {
   height: 200rem;
   width: 130rem; }
 
+.gs-errorMsg_item {
+  color: red;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  margin-left: 10rem; }
+
+.gs-StatusMsg_item {
+  color: green;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  margin-left: 10rem; }
+
 fieldset {
   border: 0.2rem solid #c1c1c1;
   padding: 3rem;

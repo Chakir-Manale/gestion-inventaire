@@ -1,0 +1,17 @@
+.gs-errorMsg{
+    &_item{
+        color: red;
+        font-size: 1.5rem;
+        font-family: sans-serif;
+        margin-left: 10rem;
+    }
+}
+.gs-StatusMsg{
+    &_item{
+        color: green;
+        font-size: 1.5rem;
+        font-family: sans-serif;
+        margin-left: 10rem;
+    }
+    
+}
