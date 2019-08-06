@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * INVENTAIRE MODULE
+ */
+
+
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function inventaire_views_pre_view($view, $display_id, array &$args) {
+  if ($view->storage->id() == 'listing_page') {
+  
+    $user_roles = \Drupal::currentUser()->getRoles();
+    // var_dump( $user_roles);
+    
+    if (!in_array('authenticated', $user_roles)) {
+      $view->removeHandler($display_id, 'field', 'nothing');
+    }
+  }
+}
