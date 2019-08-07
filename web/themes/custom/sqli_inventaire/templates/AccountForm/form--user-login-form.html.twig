@@ -12,16 +12,10 @@
  * @ingroup themeable
  */
 #}
-<form {{ attributes.addClass('gs-form') }}>
+<form{{ attributes.addClass('gs-Loginform') }}>
 
-  <fieldset {{ attributes.addClass('gs-form_fieldset') }}>
-
-    <legend {{ title_attributes.addClass('form-legend') }}> Inventaire </legend>
-    
-    <div class="row">
-        {{ children }}
-      </div>
-
+  <fieldset class="gs-Loginform_fieldset ">
+     {{ children }}
   </fieldset>
   
 </form>

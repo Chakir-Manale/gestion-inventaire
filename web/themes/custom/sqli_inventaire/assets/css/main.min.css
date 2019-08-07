@@ -203,27 +203,24 @@ ul, ol, li {
 .gs-StatusMsg_item {
   color: green;
   font-size: 1.5rem;
-  font-family: sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif;
   margin-left: 10rem; }
 
-fieldset {
-  border: 0.2rem solid #c1c1c1;
-  padding: 3rem;
-  margin: 2rem auto 0 auto;
-  width: 90rem;
-  max-width: 100rem;
-  background: -webkit-gradient(linear, left top, right bottom, from(white), to(lightslategrey));
-  background: -webkit-linear-gradient(left top, white, lightslategrey);
-  background: -moz-linear-gradient(left top, white, lightslategrey);
-  background: -o-linear-gradient(left top, white, lightslategrey);
-  background: linear-gradient(to right bottom, white, lightslategrey); }
-
 .gs-form {
-  grid-template-columns: 1fr minmax(auto, 30em) 1fr;
   min-height: 100vh;
   place-items: center;
-  justify-items: stretch;
-  grid-column: 2; }
+  justify-items: stretch; }
+  .gs-form_fieldset {
+    border: 0.2rem solid #c1c1c1;
+    padding: 3rem;
+    margin: 2rem auto 0 auto;
+    width: 90rem;
+    max-width: 100rem;
+    background: -webkit-gradient(linear, left top, right bottom, from(white), to(lightslategrey));
+    background: -webkit-linear-gradient(left top, white, lightslategrey);
+    background: -moz-linear-gradient(left top, white, lightslategrey);
+    background: -o-linear-gradient(left top, white, lightslategrey);
+    background: linear-gradient(to right bottom, white, lightslategrey); }
   .gs-form_group .label {
     font-size: 1.4rem;
     text-align: right;
@@ -253,6 +250,70 @@ fieldset {
   .gs-form .submit:hover {
     background: green;
     border: green; }
+
+.gs-Loginform {
+  min-height: 100vh;
+  place-items: center;
+  justify-items: stretch; }
+  .gs-Loginform_fieldset {
+    border: 0.2rem solid #c1c1c1;
+    padding: 3rem;
+    margin: 2rem auto 0 auto;
+    width: 40rem;
+    height: 30rem;
+    max-width: 100rem;
+    background: -webkit-gradient(linear, left top, right bottom, from(white), to(lightslategrey));
+    background: -webkit-linear-gradient(left top, white, lightslategrey);
+    background: -moz-linear-gradient(left top, white, lightslategrey);
+    background: -o-linear-gradient(left top, white, lightslategrey);
+    background: linear-gradient(to right bottom, white, lightslategrey); }
+  .gs-Loginform .Login {
+    background: royalblue;
+    border: royalblue;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    float: right;
+    width: 12rem;
+    height: 3.5rem;
+    font-size: large;
+    font-weight: 600;
+    margin-top: 4rem;
+    color: blanchedalmond;
+    text-shadow: 0 0 0.5em violet, 0 0 0.5em cyan, 0 0 0.5em #fff; }
+
+.gs-Registerform {
+  place-items: center;
+  justify-items: stretch; }
+  .gs-Registerform_fieldset {
+    border: 0.2rem solid #c1c1c1;
+    padding: 3rem;
+    margin: 2rem auto 0 auto;
+    width: 46rem;
+    max-width: 100rem;
+    background: -webkit-gradient(linear, left top, right bottom, from(white), to(lightslategrey));
+    background: -webkit-linear-gradient(left top, white, lightslategrey);
+    background: -moz-linear-gradient(left top, white, lightslategrey);
+    background: -o-linear-gradient(left top, white, lightslategrey);
+    background: linear-gradient(to right bottom, white, lightslategrey); }
+  .gs-Registerform .Login {
+    background: royalblue;
+    border: royalblue;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    float: right;
+    width: 12rem;
+    height: 3.5rem;
+    font-size: large;
+    font-weight: 600;
+    margin-top: 4rem;
+    color: blanchedalmond;
+    text-shadow: 0 0 0.5em violet, 0 0 0.5em cyan, 0 0 0.5em #fff; }
+  .gs-Registerform .summary {
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: sans-serif; }
 
 .gs-table {
   margin-top: 3rem; }

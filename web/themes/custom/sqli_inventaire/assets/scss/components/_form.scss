@@ -1,19 +1,20 @@
-fieldset{
-    border: 0.2rem solid #c1c1c1;
-    padding: 3rem;
-    margin: 2rem auto 0 auto;
-    width: 90rem;
-    max-width: 100rem; 
-    background: linear-gradient(to right bottom, white , lightslategrey );
-}
+
 
 .gs-form{
-    grid-template-columns: 1fr minmax(auto, 30em) 1fr;
+    
     min-height: 100vh; 
     place-items: center;
     justify-items: stretch;
-    grid-column: 2;
-    
+   
+    &_fieldset{
+        border: 0.2rem solid #c1c1c1;
+        padding: 3rem;
+        margin: 2rem auto 0 auto;
+        width: 90rem;
+        max-width: 100rem; 
+        background: linear-gradient(to right bottom, white , lightslategrey );
+    }
+
     &_group{
         .label{
             font-size: $text-size-14;
@@ -46,4 +47,69 @@ fieldset{
     .submit:hover{ background: green; border: green;   } 
 
 } 
+ 
+.gs-Loginform {
+ 
+    min-height: 100vh; 
+    place-items: center;
+    justify-items: stretch;
 
+    &_fieldset{
+
+        border: 0.2rem solid #c1c1c1;
+        padding: 3rem;
+        margin: 2rem auto 0 auto;
+        width: 40rem;
+        height: 30rem;
+        max-width: 100rem;
+        background: linear-gradient(to right bottom, white , lightslategrey );
+    }
+    .Login{
+        background: royalblue;
+        border: royalblue;
+        border-radius: 35px;
+        float: right;
+        width: 12rem;
+        height: 3.5rem;
+        font-size: large;
+        font-weight: 600;
+        margin-top: 4rem;
+        color: blanchedalmond;
+        text-shadow: 0 0 0.5em violet, 0 0 0.5em cyan, 0 0 0.5em #fff;
+        
+    }
+}
+
+.gs-Registerform{
+    
+    place-items: center;
+    justify-items: stretch;
+   
+    &_fieldset{
+        border: 0.2rem solid #c1c1c1;
+        padding: 3rem;
+        margin: 2rem auto 0 auto;
+        width: 46rem;
+        max-width: 100rem; 
+        background: linear-gradient(to right bottom, white , lightslategrey );
+    }
+    .Login{
+        background: royalblue;
+        border: royalblue;
+        border-radius: 35px;
+        float: right;
+        width: 12rem;
+        height: 3.5rem;
+        font-size: large;
+        font-weight: 600;
+        margin-top: 4rem;
+        color: blanchedalmond;
+        text-shadow: 0 0 0.5em violet, 0 0 0.5em cyan, 0 0 0.5em #fff;
+        
+    }
+    .summary{
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+}
