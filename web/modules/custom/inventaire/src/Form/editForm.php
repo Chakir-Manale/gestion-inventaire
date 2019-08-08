@@ -189,12 +189,26 @@ class editForm extends FormBase  {
           '#required' => true,
         ];
 
+        $form['cancel'] = [
+          '#type' => 'submit',
+          '#value' => t('Cancel'),
+          '#submit' => array('::UpdateFormCancel'),
+          '#limit_validation_errors' => array(),
+        ];
+
         $form['submit'] = [
           '#type' => 'submit',
           '#value' => $this->t('Update'),
         ];
 #ENDREGION
     return $form;
+  }
+
+  public function UpdateFormCancel(array &$form, FormStateInterface $form_state) {
+   
+    $url = Url::fromRoute('view.listing_page.page_1');
+    return $form_state->setRedirectUrl($url);
+  
   }
 
   /**

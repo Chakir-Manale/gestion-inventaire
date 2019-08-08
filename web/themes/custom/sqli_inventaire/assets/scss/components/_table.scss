@@ -10,8 +10,14 @@
     .action-delete{
         display: none;
     }
+   
  }
-
+ .btn-GoBack{
+    float: right;
+    width: 15rem;
+    height: 4rem;
+    font-size: 2.5rem;
+}
 .gs-table th{
     font-weight: bold;
     font-family: $sans-serif;

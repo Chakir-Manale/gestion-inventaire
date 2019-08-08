@@ -333,9 +333,6 @@ ul, ol, li {
     width: 18rem;
     height: 5.4rem;
     margin: 2rem 2rem 0 auto; }
-  .gs-form .submit:hover {
-    background: green;
-    border: green; }
 
 .gs-Loginform {
   place-items: center;
@@ -408,6 +405,12 @@ ul, ol, li {
     display: none; }
   .gs-table .action-delete {
     display: none; }
+
+.btn-GoBack {
+  float: right;
+  width: 15rem;
+  height: 4rem;
+  font-size: 2.5rem; }
 
 .gs-table th {
   font-weight: bold;

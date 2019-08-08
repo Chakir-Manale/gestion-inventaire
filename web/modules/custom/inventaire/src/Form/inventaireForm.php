@@ -5,7 +5,7 @@ namespace Drupal\inventaire\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-
+use Drupal\Core\Url;
 /**
  * Class inventaireForm.
  */
@@ -158,15 +158,27 @@ class inventaireForm extends FormBase {
       '#required' => true,
     ];
 
+    $form['cancel'] = [
+      '#type' => 'submit',
+      '#value' => t('Cancel'),
+      '#submit' => array('::AddNewFormCancel'),
+      '#limit_validation_errors' => array(),
+    ];
+
     $form['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Ajouter'),
+      '#value' => $this->t('Add'),
     ];
 
     return $form;
   }
 #ENDREGION
 
+  public function AddNewFormCancel(array &$form, FormStateInterface $form_state) {
+    
+    $url = Url::fromRoute('view.listing_page.page_1');
+    return $form_state->setRedirectUrl($url);
+  }
   /**
    * {@inheritdoc}
    */
@@ -243,6 +255,6 @@ class inventaireForm extends FormBase {
               }
  
 
-            }
+  }
 
 }
