@@ -262,6 +262,36 @@ ul, ol, li {
       -o-transform: skew(25deg);
       transform: skew(25deg); }
 
+.gs-Deleteform {
+  place-items: center;
+  justify-items: stretch; }
+  .gs-Deleteform_fieldset {
+    border: 0.2rem solid #c1c1c1;
+    padding: 3rem;
+    margin: 0 auto 0 auto;
+    width: 44rem;
+    height: 24rem;
+    max-width: 100rem;
+    background: -webkit-gradient(linear, left top, right bottom, from(white), to(lightslategrey));
+    background: -webkit-linear-gradient(left top, white, lightslategrey);
+    background: -moz-linear-gradient(left top, white, lightslategrey);
+    background: -o-linear-gradient(left top, white, lightslategrey);
+    background: linear-gradient(to right bottom, white, lightslategrey); }
+  .gs-Deleteform .Delete {
+    background: royalblue;
+    border: royalblue;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    float: right;
+    width: 12rem;
+    height: 3.5rem;
+    font-size: large;
+    font-weight: 600;
+    margin-top: 4rem;
+    color: blanchedalmond;
+    text-shadow: 0 0 0.5em violet, 0 0 0.5em cyan, 0 0 0.5em #fff; }
+
 .gs-form {
   min-height: 100vh;
   place-items: center;
@@ -391,6 +421,60 @@ ul, ol, li {
   border-top: 1px solid #dee2e6;
   font-size: 1.7rem;
   font-family: sans-serif; }
+
+@media only screen and (max-width: 700px) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+  .gs-canvas {
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+  .gs-article_img {
+    width: 34rem; }
+  .gs-menu_item {
+    width: 8rem; }
+  .gs-slogan {
+    display: block; }
+  .gs-tasks-block {
+    margin-left: 4rem;
+    width: 45.5rem; }
+    .gs-tasks-block .gs-menu_item {
+      width: 20rem; }
+  .gs-btn {
+    margin-top: 1.5rem;
+    margin-left: 5rem; }
+  .gs-form_fieldset {
+    width: 30rem; }
+  .gs-Deleteform_fieldset {
+    width: 40rem; } }
+
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+  .gs-canvas {
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+  .gs-article_img {
+    width: 34rem; }
+  .gs-menu_item {
+    width: 8rem; }
+  .gs-slogan {
+    display: block; }
+  .gs-tasks-block {
+    margin-left: 4rem;
+    width: 45.5rem; }
+    .gs-tasks-block .gs-menu_item {
+      width: 20rem; }
+  .gs-btn {
+    width: 17rem;
+    font-size: 2.5rem; }
+  .gs-form_fieldset {
+    width: 60rem; } }
 
 .gs-title {
   text-align: center; }

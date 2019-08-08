@@ -1,6 +1,84 @@
 //desktop
 
-//mobile
-@media screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) {} 
 
-}
+//mobile & tablets
+// orientation: portrait
+@media only screen and (max-width: 700px) {
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }  
+    .gs-canvas{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .gs-article_img{
+        width:34rem;
+    }
+    .gs-menu_item{
+        width: 8rem;
+    }
+    
+    .gs-slogan{
+        display: block;
+    }
+    .gs-tasks-block{
+        margin-left: 4rem;
+        width: 45.5rem;
+       
+        .gs-menu_item{
+            width: 20rem;
+        }
+    }
+    .gs-btn{
+        margin-top: 1.5rem;
+        margin-left: 5rem;
+    }
+    .gs-form_fieldset{
+        width: 30rem;
+    }
+    .gs-Deleteform_fieldset {
+        width: 40rem;
+    }
+}//@media (max-width: 700px) 
+
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }  
+    .gs-canvas{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .gs-article_img{
+        width:34rem;
+    }
+    .gs-menu_item{
+        width: 8rem;
+    }
+    
+    .gs-slogan{
+        display: block;
+    }
+    .gs-tasks-block{
+        margin-left: 4rem;
+        width: 45.5rem;
+       
+        .gs-menu_item{
+            width: 20rem;
+        }
+    }
+    .gs-btn{
+        width: 17rem;
+        font-size: 2.5rem;
+    }
+    .gs-form_fieldset{
+        width: 60rem;
+    }
+}//@media 

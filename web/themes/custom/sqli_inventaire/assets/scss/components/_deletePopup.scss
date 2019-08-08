@@ -1,0 +1,32 @@
+ 
+.gs-Deleteform {
+ 
+    //min-height: 100vh; 
+    place-items: center;
+    justify-items: stretch;
+
+    &_fieldset{
+
+        border: 0.2rem solid #c1c1c1;
+        padding: 3rem;
+        margin: 0 auto 0 auto;
+        width: 44rem;
+        height: 24rem;
+        max-width: 100rem;
+        background: linear-gradient(to right bottom, white , lightslategrey );
+    }
+    .Delete{
+        background: royalblue;
+        border: royalblue;
+        border-radius: 35px;
+        float: right;
+        width: 12rem;
+        height: 3.5rem;
+        font-size: large;
+        font-weight: 600;
+        margin-top: 4rem;
+        color: blanchedalmond;
+        text-shadow: 0 0 0.5em violet, 0 0 0.5em cyan, 0 0 0.5em #fff;
+        
+    }
+}

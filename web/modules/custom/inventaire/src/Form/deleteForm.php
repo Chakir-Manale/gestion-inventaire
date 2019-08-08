@@ -28,18 +28,23 @@ class deleteForm extends FormBase  {
         $form['id'] = [
           '#type' => 'hidden',
           '#title' => $this->t('nid :'),
-          '#value' => $node->id(),
-          '#maxlength' => 50,      
-          '#required' => true,
-        ];      
+          '#default_value' => $node->id(),
+          '#disabled' => TRUE,
+        ]; 
 
         $form['title'] = [
-        '#type' => 'textfield',
-        '#default_value' => $node->title->value,
-        '#maxlength' => 50,
-        '#disabled' => TRUE,
-      ];
-      
+          '#type' => 'textfield',
+          '#default_value' => 'Title: '.$node->title->value,
+          '#disabled' => TRUE,
+        ];
+              
+        $form['ID'] = [
+          '#type' => 'textfield',
+          '#default_value' => 'ID: '.$node->get('field_id')->value,
+          '#disabled' => TRUE,
+        ];
+
+       
 
         $form['cancel'] = array(
           '#type' => 'submit',
