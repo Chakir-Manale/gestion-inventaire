@@ -184,7 +184,7 @@ class inventaireForm extends FormBase {
         $form_state->setErrorByName('prenom_collab',"Le prenom '".$form_state->getValue('prenom_collab')."' n'est pas valide");
       }
     
-      if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('marque'))) {
+      if(!preg_match('/^[a-zA-Z ]+$/',$form_state->getValue('marque'))) {
         $form_state->setErrorByName('marque',"La marque '".$form_state->getValue('marque')."' n'est pas valide");
       }  
 

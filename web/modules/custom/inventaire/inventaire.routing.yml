@@ -13,3 +13,12 @@ inventaire.edit_form:
     _title: 'Update Product'
   requirements:
     _access: 'TRUE'
+
+inventaire.delete_form:
+  path: '/form/deleteForm/{id}'
+  defaults:
+    _form: '\Drupal\inventaire\Form\deleteForm'
+    _title: 'Deleting item'
+  requirements:
+    _access: 'TRUE'
+

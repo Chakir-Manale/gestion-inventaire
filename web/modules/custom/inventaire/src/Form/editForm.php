@@ -16,7 +16,7 @@ class editForm extends FormBase  {
   /**
    * {@inheritdoc}
    */
-  public function getFormId() { return 'inventaire_form'; }
+  public function getFormId() { return 'edit_form'; }
 
  
   /**
@@ -202,20 +202,24 @@ class editForm extends FormBase  {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) 
   {
-    parent::validateForm($form, $form_state);
+     parent::validateForm($form, $form_state);
 
-    if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('nom_collab'))) {
-      $form_state->setErrorByName('nom_collab',"Le Nom '".$form_state->getValue('nom_collab')."' n'est pas valide");
-      }
-     
-      if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('prenom_collab'))) {
-        $form_state->setErrorByName('prenom_collab',"Le prenom '".$form_state->getValue('prenom_collab')."' n'est pas valide");
-      }
     
-      if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('marque'))) {
-        $form_state->setErrorByName('marque',"La marque '".$form_state->getValue('marque')."' n'est pas valide");
-      }  
+    if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('nom_collab'))) {
+    $form_state->setErrorByName('nom_collab',"Le Nom '".$form_state->getValue('nom_collab')."' n'est pas valide");
+    }
+   
+    if(!preg_match('/^[a-zA-Z]+$/',$form_state->getValue('prenom_collab'))) {
+      $form_state->setErrorByName('prenom_collab',"Le prenom '".$form_state->getValue('prenom_collab')."' n'est pas valide");
+    }
+  
+    if(!preg_match('/^[a-zA-Z ]+$/',$form_state->getValue('marque'))) {
+      $form_state->setErrorByName('marque',"La marque '".$form_state->getValue('marque')."' n'est pas valide");
+    }  
 
+    if(!preg_match('/^[0-9]{1,3}$/',$form_state->getValue('RAM'))) {
+      $form_state->setErrorByName('RAM',"La RAM '".$form_state->getValue('RAM')."' n'est pas valide");
+    }
     
   }
 

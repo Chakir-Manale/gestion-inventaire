@@ -1,6 +1,5 @@
 $radius: 7px;
 $skew: 25deg;
-$main-color: tomato;
 
 .gs-header {
     display: flex;
@@ -49,7 +48,7 @@ $main-color: tomato;
                 transition:all 0.3s linear;
             
                     &:first-child{
-                        border-radius:$radius 0 0 $radius;
+                       // border-radius:$radius 0 0 $radius;
                     }
                     
                     &:last-child{

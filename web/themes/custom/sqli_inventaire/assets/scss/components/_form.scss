@@ -50,7 +50,7 @@
  
 .gs-Loginform {
  
-    min-height: 100vh; 
+    //min-height: 100vh; 
     place-items: center;
     justify-items: stretch;
 
@@ -58,8 +58,8 @@
 
         border: 0.2rem solid #c1c1c1;
         padding: 3rem;
-        margin: 2rem auto 0 auto;
-        width: 40rem;
+        margin: 0 auto 0 auto;
+        width: 44rem;
         height: 30rem;
         max-width: 100rem;
         background: linear-gradient(to right bottom, white , lightslategrey );
@@ -88,7 +88,7 @@
     &_fieldset{
         border: 0.2rem solid #c1c1c1;
         padding: 3rem;
-        margin: 2rem auto 0 auto;
+        margin: 0 auto 0 auto;
         width: 46rem;
         max-width: 100rem; 
         background: linear-gradient(to right bottom, white , lightslategrey );

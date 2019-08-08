@@ -12,10 +12,20 @@
  * @ingroup themeable
  */
 #}
-<form {{ attributes.addClass('gs-searchBox') }}>
+<form {{ attributes.addClass('gs-Loginform') }}>
 
-  <fieldset {{ attributes.addClass('') }}>
+  <fieldset {{ attributes.addClass('gs-Loginform_fieldset') }}>
+
+    <legend {{ title_attributes.addClass('form-legend') }} 
+      style="font-weight: bold;">
+      
+       Are u sure u wanna delete this item ? 
+    
+    </legend>
+    
         {{ children }}
+   
+
   </fieldset>
   
 </form>

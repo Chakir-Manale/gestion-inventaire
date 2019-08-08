@@ -4,9 +4,9 @@
  * @file
  * INVENTAIRE MODULE
  */
-
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Drupal\block\Entity\Block;
 
 /**
  * Implements hook_views_pre_view().
@@ -17,9 +17,10 @@ function inventaire_views_pre_view($view, $display_id, array &$args) {
     $user_roles = \Drupal::currentUser()->getRoles();
     // var_dump( $user_roles); 
     /* authenticated */ 
-    
+     
     if (!in_array('administrator', $user_roles)) {
       $view->removeHandler($display_id, 'field', 'nothing');
+      $view->removeHandler($display_id, 'field', 'nothing_1');
     }
   }
 }
@@ -42,6 +43,7 @@ function sqli_inventaire_theme_suggestions_alter(array &$suggestions, array $var
 
 
 /**
+ * Implementation of hook_theme_suggestions_form_input_alter()
  * @param $suggestions
  * @param array $variables
  */
@@ -55,33 +57,34 @@ function sqli_inventaire_theme_suggestions_input_alter(&$suggestions, array $var
 }
 
 /**
-* Implements hook_form_BASE_FORM_ID_alter().
-*/
-function inventaire_form_user_login_form_alter(&$form, FormStateInterface $form_state) {
-  $form['#theme'] = ['my_user_login'];
-  $form['actions']['submit']['#attributes']['data-twig-suggestion'] = $form['#id'];
-  
-}
-/**
-* Implements hook_form_BASE_FORM_ID_alter().
-*/
-function inventaire_form_user_register_form_alter(&$form, FormStateInterface $form_state) {
-  $form['#theme'] = ['my_user_login'];
-  $form['actions']['submit']['#attributes']['data-twig-suggestion'] = $form['#id'];
-  
+ * Implementation of hook_theme_suggestions_form_element_alter().
+ */
+function sqli_inventaire_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+  if (\Drupal::service('path.current')->getPath() == '/user/login' )  {
+    $suggestions[] = $variables['theme_hook_original'] . '__' .str_replace('-', '_', 'user-login');
+  }
+
+  if ( \Drupal::service('path.current')->getPath() == '/user/register') {
+    $suggestions[] = $variables['theme_hook_original'] . '__' .str_replace('-', '_', 'user-register');
+  }
+
+  if ( \Drupal::service('path.current')->getPath() == '/user/password') {
+    $suggestions[] = $variables['theme_hook_original'] . '__' .str_replace('-', '_', 'user-pass');
+  }
+
+  $element = $variables['element'];
+
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = $variables['theme_hook_original'] .'__' .str_replace('-', '_', $element['#attributes']['data-twig-suggestion']);
+   }
+
+
+  return $suggestions;
 }
 
-/**
-* Implements hook_form_BASE_FORM_ID_alter().
-*/
-/*
-function inventaire_views_exposed_form_listing_page_page_1_form_alter(&$form, FormStateInterface $form_state) {
-  $form['#theme'] = ['my_user_login'];
-  $form['actions']['submit']['#attributes']['data-twig-suggestion'] = $form['#id'];
-  
-}*/
+
 function sqli_inventaire_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-
+  $form['#theme'] = ['my_user_login'];
   foreach (\Drupal\Core\Render\Element::children($form) as $key) {
     $form[$key]['#attributes']['data-twig-suggestion'] = $form['#id'];
   }
