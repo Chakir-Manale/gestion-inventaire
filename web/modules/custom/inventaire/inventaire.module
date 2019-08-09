@@ -2,7 +2,7 @@
 
 /**
  * @file
- * INVENTAIRE MODULE
+ * INVENTAIRE.MODULE
  */
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;

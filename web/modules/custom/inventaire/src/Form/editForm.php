@@ -269,7 +269,6 @@ class editForm extends FormBase  {
       $node->field_adaptateur->value =  $fields['Adaptateur'];       
       $node->field_casque->value =  $fields['Casque'];
       $node->field_num_serie_casque->value =  $fields['num_serie_casque'];    
-               
 
 
     try { 

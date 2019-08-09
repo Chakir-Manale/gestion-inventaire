@@ -62,14 +62,14 @@
 {% else %}
 
   <tr {{ attributes }}>
-    <td {{ title_attributes.addClass(title_classes) }}>{{ label }}</td>
+    <td {{ title_attributes.addClass(title_classes) }}>{{ label }} </td>
 {#
     {% if multiple %}
       <div>
     {% endif %}
 #}
     {% for item in items %}
-      <td {{ item.attributes }}>{{ item.content }}</td >
+      <td {{ item.attributes }}>{{ item.content }} </td >
     {% endfor %}
 {#
     {% if multiple %}

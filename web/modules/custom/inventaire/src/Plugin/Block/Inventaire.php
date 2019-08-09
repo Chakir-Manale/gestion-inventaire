@@ -32,6 +32,7 @@ class Inventaire extends BlockBase {
    
     $form = \Drupal::formBuilder()->getForm('Drupal\inventaire\Form\inventaireForm');
     return $form;
+    
   }
  
 }

@@ -16,7 +16,7 @@
  * @ingroup themeable
  */
 #}
-<details{{ attributes }}>
+<details {{ attributes.removeAttribute('open') }}>
   {%
     set summary_classes = [
      'summary',
