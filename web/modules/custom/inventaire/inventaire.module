@@ -9,6 +9,21 @@ use Drupal\Core\Render\Element;
 use Drupal\block\Entity\Block;
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function inventaire_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    // Alter login form and add own custom submit handler.
+    $form['#submit'][] = '_inventaire_user_login_form_submit';
+}
+
+/**
+ * Custom submit handler for login form.
+ */
+function _inventaire_user_login_form_submit($form, FormStateInterface $form_state) {
+    $form_state->setRedirect('<front>');
+
+}
+/**
  * Implements hook_views_pre_view().
  */
 function inventaire_views_pre_view($view, $display_id, array &$args) {

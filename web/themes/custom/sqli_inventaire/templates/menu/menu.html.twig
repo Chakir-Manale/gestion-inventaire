@@ -30,20 +30,25 @@
 
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
+
   {% if items %}
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('gs-menu d-flex') }}>
     {% else %}
       <ul>
     {% endif %}
+
     {% for item in items %}
+
       <li{{ item.attributes.addClass('gs-menu_item') }}>
         {{ link(item.title, item.url, attributes.addClass('gs-menu_link'))  }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
       </li>
+
     {% endfor %}
+
     </ul>
   {% endif %}
 {% endmacro %}
