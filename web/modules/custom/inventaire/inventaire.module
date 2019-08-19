@@ -16,8 +16,8 @@ function inventaire_views_pre_view($view, $display_id, array &$args) {
   
     $user_roles = \Drupal::currentUser()->getRoles();
     // var_dump( $user_roles); 
-    /* authenticated */ 
-     
+    /* authenticated */  
+    
     if (!in_array('administrator', $user_roles)) {
       $view->removeHandler($display_id, 'field', 'nothing');
       $view->removeHandler($display_id, 'field', 'nothing_1');
@@ -91,3 +91,4 @@ function sqli_inventaire_form_alter(&$form, FormStateInterface $form_state, $for
 
   $form['actions']['submit']['#attributes']['data-twig-suggestion'] = $form['#id'];
 }
+

@@ -203,6 +203,9 @@ class inventaireForm extends FormBase {
       if(!preg_match('/^[0-9]{1,3}$/',$form_state->getValue('RAM'))) {
         $form_state->setErrorByName('RAM',"La RAM '".$form_state->getValue('RAM')."' n'est pas valide");
       }
+      if(!preg_match('/^[0-9]$/',$form_state->getValue('ID'))) {
+        $form_state->setErrorByName('ID'," l'ID '".$form_state->getValue('ID')."' n'est pas valide");
+      }
   }
 
   /**

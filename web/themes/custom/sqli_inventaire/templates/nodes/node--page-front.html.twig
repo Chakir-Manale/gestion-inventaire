@@ -92,14 +92,20 @@
                   </a>
                 </div>
               
-              {% if logged_in %}
-
+            {# {% if logged_in %} #}
+              
+              {% if user.hasPermission('administrator') %}
                 <div class="col-md-6">
                   <a href="http://dev.inventaire/form/inventaireForm" onclick="window.open(this.href);return false">
-                      <button class="btn btn-primary gs-btn"> New product </button>
+                    <button class="btn btn-primary gs-btn"> New product </button>
                   </a>
                 </div>
-                
+               {% else %} 
+                <div class="col-md-6">
+                  <a >
+                    <button style="background:#B2B3B6;cursor:not-allowed;border:none;" class="btn btn-primary gs-btn"> New product </button>
+                  </a>
+                </div>
               {% endif %}
             </div>
         
