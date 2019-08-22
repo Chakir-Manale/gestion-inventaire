@@ -23,8 +23,9 @@ class deleteForm extends FormBase  {
    */
   public function buildForm(array $form, FormStateInterface $form_state,int $id = 0 ) 
   {
-     $node = Node::load($id); 
-#REGION 
+#REGION   
+        $node = Node::load($id); 
+
         $form['id'] = [
           '#type' => 'hidden',
           '#title' => $this->t('nid :'),
@@ -57,33 +58,21 @@ class deleteForm extends FormBase  {
           '#value' => $this->t('Delete'),
         ];
 
-        
-#ENDREGION
     return $form;
+#ENDREGION
   }
+        
 
-  /**
-   * Custom submission handler.
-   *
-   * @param array $form
-   *   An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The current state of the form.
-   */
   public function DeleteFormCancel(array &$form, FormStateInterface $form_state) {
-    // Get the form values here as $form_state->getValue(array('sample_field')) 
-    // and process it.
     $url = Url::fromRoute('view.listing_page.page_1');
-    return $form_state->setRedirectUrl($url);
-  
+    return $form_state->setRedirectUrl($url); 
   }
   
 
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) 
-  {   parent::validateForm($form, $form_state); }
+  public function validateForm(array &$form, FormStateInterface $form_state)  {  }
 
   /**
    * {@inheritdoc}
@@ -104,11 +93,11 @@ class deleteForm extends FormBase  {
        catch (Exception $e) {
       drupal_set_message('Could not DELETE the node.', 'error');
       }
-     
-  $url = Url::fromRoute('view.listing_page.page_1');
-  return $form_state->setRedirectUrl($url);
+      
+    $url = Url::fromRoute('view.listing_page.page_1');
+    return $form_state->setRedirectUrl($url);
 
-  }//Formsubmit method
+  }//End Formsubmit 
 
-}//end class
+}//endClass
 

@@ -26,7 +26,6 @@
         "drupal/contentimport": "^4.1",
         "drupal/core": "^8.7.0",
         "drupal/csv_serialization": "^1.4",
-        "drupal/field_permissions": "^1.0@RC",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",

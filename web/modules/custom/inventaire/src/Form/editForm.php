@@ -276,7 +276,7 @@ class editForm extends FormBase  {
          $node->title->value = 'Ordinateur '. $fields['id'];
          $node->save();
          $success = TRUE;
-         drupal_set_message('successfuly updated the node.'.$node->id(), 'status');
+         drupal_set_message('successfuly updated the laptop.'.$node->id(), 'status');
 
          $url = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()]);
          return $form_state->setRedirectUrl($url);
@@ -288,4 +288,4 @@ class editForm extends FormBase  {
 
   }//Formsubmit method
 
-}//end class
+}//endClass
