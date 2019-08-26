@@ -1,7 +1,9 @@
-uuid: 02fc21cd-398d-4c13-ae4c-9996a32dcdc9
+uuid: e6c56c9d-56b8-460a-a7f9-6edc3953b685
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - sqli_inventaire
 _core:
@@ -19,4 +21,9 @@ settings:
   label_display: '0'
   primary: true
   secondary: true
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user/login\r\n/user/register\r\n/user/password"
+    negate: false
+    context_mapping: {  }

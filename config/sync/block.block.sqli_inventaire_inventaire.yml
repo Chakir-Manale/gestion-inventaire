@@ -1,0 +1,28 @@
+uuid: 0f48c691-cd65-492b-a92f-2866f5d1b3ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - inventaire
+    - node
+  theme:
+    - sqli_inventaire
+id: sqli_inventaire_inventaire
+theme: sqli_inventaire
+region: content
+weight: 0
+provider: null
+plugin: id_inventaire
+settings:
+  id: id_inventaire
+  label: Inventaire
+  provider: inventaire
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      ordinateur: ordinateur
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

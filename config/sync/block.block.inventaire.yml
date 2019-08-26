@@ -1,0 +1,28 @@
+uuid: d0de071b-dcaa-41e0-9386-d1e1625313b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - inventaire
+    - node
+  theme:
+    - bartik
+id: inventaire
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: id_inventaire
+settings:
+  id: id_inventaire
+  label: Inventaire
+  provider: inventaire
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      ordinateur: ordinateur
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

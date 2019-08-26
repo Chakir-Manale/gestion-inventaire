@@ -1,0 +1,19 @@
+uuid: 0e76100a-96ac-45b6-b101-a635cd1416f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_affectation
+    - node.type.ordinateurs
+id: node.ordinateurs.field_date_affectation
+field_name: field_date_affectation
+entity_type: node
+bundle: ordinateurs
+label: Date_Affectation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

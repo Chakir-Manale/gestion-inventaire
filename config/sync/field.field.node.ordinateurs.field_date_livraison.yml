@@ -1,0 +1,19 @@
+uuid: 0d648683-90d4-4203-b0cc-ba4dc32c0f16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_livraison
+    - node.type.ordinateurs
+id: node.ordinateurs.field_date_livraison
+field_name: field_date_livraison
+entity_type: node
+bundle: ordinateurs
+label: Date_Livraison
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

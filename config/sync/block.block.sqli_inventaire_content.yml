@@ -1,8 +1,9 @@
-uuid: fb873139-a8df-4912-bdba-cdd482cf1c29
+uuid: eafe3bef-52d6-43c4-b45c-137fe335b778
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - system
   theme:
     - sqli_inventaire
@@ -19,4 +20,11 @@ settings:
   label: 'Main page content'
   provider: system
   label_display: '0'
-visibility: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      ordinateur: ordinateur
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

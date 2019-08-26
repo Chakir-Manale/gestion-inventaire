@@ -1,0 +1,28 @@
+uuid: 1ec27e20-c6bb-4dd2-8254-1b0f1cb3c265
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page_front.body
+    - node.type.page_front
+  module:
+    - text
+    - user
+id: node.page_front.default
+targetEntityType: node
+bundle: page_front
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

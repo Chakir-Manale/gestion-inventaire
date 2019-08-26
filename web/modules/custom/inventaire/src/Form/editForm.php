@@ -247,7 +247,6 @@ class editForm extends FormBase  {
 
     $node = Node::load( $fields['id']); 
   
-   
       $node->field_nom_collab->value =  $fields['nom_collab'];     
       $node->field_prenom_collab->value =   $fields['prenom_collab'];    
       $node->field_type->value =  $fields['type_machine'];
@@ -283,8 +282,7 @@ class editForm extends FormBase  {
         }
         catch (Exception $e) {
           drupal_set_message('Could not update the node.', 'error');
-        }  
-      
+        }       
 
   }//Formsubmit method
 

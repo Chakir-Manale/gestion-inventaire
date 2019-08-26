@@ -1,0 +1,23 @@
+uuid: 8edc131a-6b5a-4ff8-8543-e8616d4a376d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ram
+    - node.type.ordinateurs
+id: node.ordinateurs.field_ram
+field_name: field_ram
+entity_type: node
+bundle: ordinateurs
+label: RAM
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

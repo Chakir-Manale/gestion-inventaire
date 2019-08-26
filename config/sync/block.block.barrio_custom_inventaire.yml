@@ -1,0 +1,28 @@
+uuid: 405a1392-46b3-4ce7-b824-6dbcfb71106a
+langcode: en
+status: true
+dependencies:
+  module:
+    - inventaire
+    - node
+  theme:
+    - barrio_custom
+id: barrio_custom_inventaire
+theme: barrio_custom
+region: content
+weight: 0
+provider: null
+plugin: id_inventaire
+settings:
+  id: id_inventaire
+  label: Inventaire
+  provider: inventaire
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      ordinateur: ordinateur
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

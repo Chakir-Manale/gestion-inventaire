@@ -26,6 +26,7 @@ class deleteForm extends FormBase  {
 #REGION   
         $node = Node::load($id); 
 
+         //th enode id 
         $form['id'] = [
           '#type' => 'hidden',
           '#title' => $this->t('nid :'),
@@ -38,14 +39,13 @@ class deleteForm extends FormBase  {
           '#default_value' => 'Title: '.$node->title->value,
           '#disabled' => TRUE,
         ];
-              
+        
+         //the attribute ID      
         $form['ID'] = [
           '#type' => 'textfield',
           '#default_value' => 'ID: '.$node->get('field_id')->value,
           '#disabled' => TRUE,
         ];
-
-       
 
         $form['cancel'] = array(
           '#type' => 'submit',
@@ -88,10 +88,10 @@ class deleteForm extends FormBase  {
     try {
       $node = \Drupal::entityTypeManager()->getStorage('node')->load($fields['id']);
       $node->delete();
-      drupal_set_message('DELETED the node.');
+      drupal_set_message('Machine DELETED with success .');
       }
        catch (Exception $e) {
-      drupal_set_message('Could not DELETE the node.', 'error');
+      drupal_set_message('Could not DELETE machine .', 'error');
       }
       
     $url = Url::fromRoute('view.listing_page.page_1');

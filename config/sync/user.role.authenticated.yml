@@ -13,6 +13,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'administer modules'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'

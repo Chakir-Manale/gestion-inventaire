@@ -1,0 +1,19 @@
+uuid: c11490e9-3459-44e3-b01a-12683f5005e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_adaptateur
+    - node.type.ordinateurs
+id: node.ordinateurs.field_adaptateur
+field_name: field_adaptateur
+entity_type: node
+bundle: ordinateurs
+label: Adaptateur
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

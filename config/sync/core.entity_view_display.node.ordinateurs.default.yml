@@ -1,0 +1,212 @@
+uuid: c4590848-172c-4b42-af25-4648f0079894
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ordinateurs.field_adaptateur
+    - field.field.node.ordinateurs.field_capacitehdd
+    - field.field.node.ordinateurs.field_casque
+    - field.field.node.ordinateurs.field_clavier
+    - field.field.node.ordinateurs.field_cpu
+    - field.field.node.ordinateurs.field_date_affectation
+    - field.field.node.ordinateurs.field_date_fin_garantie
+    - field.field.node.ordinateurs.field_date_livraison
+    - field.field.node.ordinateurs.field_id
+    - field.field.node.ordinateurs.field_marque
+    - field.field.node.ordinateurs.field_modele
+    - field.field.node.ordinateurs.field_nom_collab
+    - field.field.node.ordinateurs.field_num_serie
+    - field.field.node.ordinateurs.field_num_serie_casque
+    - field.field.node.ordinateurs.field_num_serie_ecran
+    - field.field.node.ordinateurs.field_prenom_collab
+    - field.field.node.ordinateurs.field_ram
+    - field.field.node.ordinateurs.field_s
+    - field.field.node.ordinateurs.field_taille_ecran
+    - field.field.node.ordinateurs.field_type
+    - field.field.node.ordinateurs.field_typehdd
+    - node.type.ordinateurs
+  module:
+    - user
+id: node.ordinateurs.default
+targetEntityType: node
+bundle: ordinateurs
+mode: default
+content:
+  field_adaptateur:
+    weight: 16
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_capacitehdd:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_casque:
+    weight: 19
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_clavier:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cpu:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_date_affectation:
+    weight: 21
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_date_fin_garantie:
+    weight: 22
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_date_livraison:
+    weight: 23
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_id:
+    weight: 0
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_marque:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_modele:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nom_collab:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_num_serie:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_num_serie_casque:
+    weight: 20
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_num_serie_ecran:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_prenom_collab:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ram:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_s:
+    weight: 15
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_taille_ecran:
+    weight: 17
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_type:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_typehdd:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  links: true

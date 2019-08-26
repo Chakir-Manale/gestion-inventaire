@@ -16,16 +16,15 @@
 
   <fieldset >
 
-   
+  
     {% if user.hasPermission('administer') %}
         <a class="gs-export" href="/admin/config/services/content-export" onclick="window.open(this.href);return false">Export</a>
         <a class="gs-export" href="/admin/config/content/contentimport" onclick="window.open(this.href);return false">Import</a>
     
     {% else %}
-
         <a class="gs-export" style="background:#B2B3B6;cursor:not-allowed;">Export</a>
         <a class="gs-export" style="background:#B2B3B6;cursor:not-allowed;">Import</a>
-   
+    
     {% endif %}
 
     {{ children }}

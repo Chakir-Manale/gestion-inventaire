@@ -1,0 +1,19 @@
+uuid: 48e70c79-bba2-40a0-b57a-d4a01632c16b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_fin_garantie
+    - node.type.ordinateurs
+id: node.ordinateurs.field_date_fin_garantie
+field_name: field_date_fin_garantie
+entity_type: node
+bundle: ordinateurs
+label: Date_Fin_Garantie
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

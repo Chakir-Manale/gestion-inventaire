@@ -1,0 +1,28 @@
+uuid: 6d66bbe2-cfb0-4b61-8a20-d5fe101cdaea
+langcode: en
+status: true
+dependencies:
+  module:
+    - inventaire
+    - node
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_inventaire
+theme: bootstrap_barrio
+region: content
+weight: 0
+provider: null
+plugin: id_inventaire
+settings:
+  id: id_inventaire
+  label: Inventaire
+  provider: inventaire
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      ordinateur: ordinateur
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

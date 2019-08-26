@@ -8,11 +8,12 @@
             display: inline-block;
             margin: 0;
             list-style: none;
-            margin-bottom: 0;
-            transform: skew(-20deg);
+            margin-bottom: 0; 
             background: linear-gradient(to right top, white, lightslategray);
             width: 100%;
-            
+            transform: skew(0deg);  
+            border-radius: 1rem 1rem 0rem 0rem;
+       
             &_item {
                 font-size: $text-size-15;                            
                 padding: 0.9rem;

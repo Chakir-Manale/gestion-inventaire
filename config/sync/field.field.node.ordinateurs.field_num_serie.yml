@@ -1,0 +1,19 @@
+uuid: 4d8c7e22-0cd2-4fa9-8899-9439589ca5d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_num_serie
+    - node.type.ordinateurs
+id: node.ordinateurs.field_num_serie
+field_name: field_num_serie
+entity_type: node
+bundle: ordinateurs
+label: Num_Serie
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

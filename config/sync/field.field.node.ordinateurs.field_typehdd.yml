@@ -1,0 +1,19 @@
+uuid: a4030e21-9e35-4b21-a1fe-4637e33e6063
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_typehdd
+    - node.type.ordinateurs
+id: node.ordinateurs.field_typehdd
+field_name: field_typehdd
+entity_type: node
+bundle: ordinateurs
+label: TypeHDD
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

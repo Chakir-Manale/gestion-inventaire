@@ -32,5 +32,3 @@ indexes:
     - target_id
 persist_with_no_fields: false
 custom_storage: false
-
-

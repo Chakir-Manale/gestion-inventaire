@@ -1,0 +1,19 @@
+uuid: 3c26c7c4-a2bc-4bb4-a162-a9df02ca4ce8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marque
+    - node.type.ordinateurs
+id: node.ordinateurs.field_marque
+field_name: field_marque
+entity_type: node
+bundle: ordinateurs
+label: Marque
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

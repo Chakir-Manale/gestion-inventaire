@@ -1,0 +1,21 @@
+uuid: ccc4b015-77ae-4688-a0d4-4d3285e2eb28
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_marque
+field_name: field_marque
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

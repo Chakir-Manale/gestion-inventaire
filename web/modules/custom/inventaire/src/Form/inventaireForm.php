@@ -158,7 +158,6 @@ class inventaireForm extends FormBase {
       '#maxlength' => 50,
       '#required' => true,
     ];
-
     $form['cancel'] = [
       '#type' => 'submit',
       '#value' => t('Cancel'),

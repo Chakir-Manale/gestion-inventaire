@@ -1,0 +1,18 @@
+uuid: 653d3712-485d-422c-9f31-c8a25fd1989a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_taille_ecran
+field_name: field_taille_ecran
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

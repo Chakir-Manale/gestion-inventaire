@@ -1,0 +1,22 @@
+uuid: ef8153de-5c54-4521-9f86-d10dee8b5ef1
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - barrio_custom
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: barrio_custom_search
+theme: barrio_custom
+region: sidebar_first
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

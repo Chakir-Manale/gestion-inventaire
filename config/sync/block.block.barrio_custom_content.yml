@@ -1,0 +1,30 @@
+uuid: 163c34b7-ae07-40c3-8e7d-6c367e1d07bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - barrio_custom
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: barrio_custom_content
+theme: barrio_custom
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      ordinateur: ordinateur
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

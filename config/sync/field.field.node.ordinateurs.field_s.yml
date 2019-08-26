@@ -1,0 +1,19 @@
+uuid: d3646566-aa99-41e3-b9bd-853e8eb012ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_s
+    - node.type.ordinateurs
+id: node.ordinateurs.field_s
+field_name: field_s
+entity_type: node
+bundle: ordinateurs
+label: Souris
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

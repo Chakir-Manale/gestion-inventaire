@@ -46,9 +46,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
-  font-family: "Source Code Pro", Courier, mono;
-  width: 136rem;
-  margin-left: 29rem; }
+  font-family: "Source Code Pro", Courier, mono; }
 
 .main-content {
   max-width: 1280px;
@@ -191,8 +189,7 @@ p {
 
 .gs-canvas {
   background-color: aliceblue;
-  height: 200rem;
-  width: 130rem; }
+  min-height: 100vh; }
 
 .gs-errorMsg_item {
   color: red;
@@ -217,17 +214,20 @@ p {
     margin: 0;
     list-style: none;
     margin-bottom: 0;
-    -webkit-transform: skew(-20deg);
-    -moz-transform: skew(-20deg);
-    -ms-transform: skew(-20deg);
-    -o-transform: skew(-20deg);
-    transform: skew(-20deg);
     background: -webkit-gradient(linear, left bottom, right top, from(white), to(lightslategray));
     background: -webkit-linear-gradient(left bottom, white, lightslategray);
     background: -moz-linear-gradient(left bottom, white, lightslategray);
     background: -o-linear-gradient(left bottom, white, lightslategray);
     background: linear-gradient(to right top, white, lightslategray);
-    width: 100%; }
+    width: 100%;
+    -webkit-transform: skew(0deg);
+    -moz-transform: skew(0deg);
+    -ms-transform: skew(0deg);
+    -o-transform: skew(0deg);
+    transform: skew(0deg);
+    -webkit-border-radius: 1rem 1rem 0rem 0rem;
+    -moz-border-radius: 1rem 1rem 0rem 0rem;
+    border-radius: 1rem 1rem 0rem 0rem; }
     .gs-tasks-block .gs-menu_item {
       font-size: 1.5rem;
       padding: 0.9rem;
@@ -434,14 +434,14 @@ p {
 .gs-table th {
   font-weight: bold;
   font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: midnightblue; }
 
 .gs-table tr {
   padding: 0.75rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-family: sans-serif; }
 
 @media only screen and (max-width: 700px) {

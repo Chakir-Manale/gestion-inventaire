@@ -1,0 +1,21 @@
+uuid: 900d2662-02be-4e9d-9a04-ac20082770e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_typehdd
+field_name: field_typehdd
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

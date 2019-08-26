@@ -1,0 +1,19 @@
+uuid: aaabd991-b5a8-48e1-abde-5d74d1854abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nom_collab
+    - node.type.ordinateurs
+id: node.ordinateurs.field_nom_collab
+field_name: field_nom_collab
+entity_type: node
+bundle: ordinateurs
+label: Nom_Collab
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

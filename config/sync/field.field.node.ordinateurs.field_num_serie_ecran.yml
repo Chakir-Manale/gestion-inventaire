@@ -1,0 +1,19 @@
+uuid: b1df6673-3f39-4927-9dc2-3ade0e45c4f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_num_serie_ecran
+    - node.type.ordinateurs
+id: node.ordinateurs.field_num_serie_ecran
+field_name: field_num_serie_ecran
+entity_type: node
+bundle: ordinateurs
+label: Num_Serie_Ecran
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
