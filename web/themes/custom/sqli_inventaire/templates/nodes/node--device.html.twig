@@ -72,78 +72,22 @@
  * @ingroup themeable
  */
 #}
- 
-<article{{ attributes.addClass('gs-article') }}>
-  <div class="row" style="margin-top: 5rem;">
-  
-    <div class="col-md-6">
-        <img class="gs-article_img" src="/themes/custom/sqli_inventaire/logoInvt.png">
-    </div>
-    <div class="col-md-6"> 
+<article{{ attributes.addClass('gs-article') }} >
 
-      {{content.body}}
-          
+  {% if label and not page %}
+    <h2{{ title_attributes.addClass('gs-article_title') }} >
+      <a  href="{{ url }}" rel="bookmark">{{ label }} </a>
+    </h2>
+  {% endif %}
 
-            <div class="row" style="padding-top: 1.5rem;"> 
-
-                <div class="col-md-6">
-                  <a href="http://dev.inventaire/ordinateurs" onclick="window.open(this.href);return false"> 
-                      <button class="btn btn-primary gs-btn"><i class="fa fa-laptop"></i> Laptops List</button> 
-                  </a>
-                </div>
-
-
-               <div class="col-md-6">
-                  <a href="http://dev.inventaire/devices" onclick="window.open(this.href);return false"> 
-                      <button class="btn btn-primary gs-btn"><i class="fa fa-mobile-alt"></i>Devices List</button> 
-                  </a>
-                </div>
-            
-            </div>
-
-            <div class="row" style="padding-top: 1.5rem;"> 
-              {# {% if logged_in %} #}
-              
-              {% if user.hasPermission('administrator') %}
-                <div class="col-md-6">
-                  <a href="http://dev.inventaire/form/inventaireForm" onclick="window.open(this.href);return false">
-                    <button class="btn btn-primary gs-btn"><i class="fa fa-plus-circle"></i> New PC </button>
-                  </a>
-                </div>
-               {% else %} 
-                <div class="col-md-6">
-                  <a >
-                    <button style="cursor:not-allowed;border:none;" class="btn btn-primary gs-btn" disabled> New PC </button>
-                  </a>
-                </div>
-              {% endif %}
-               
-              
-            {# {% if logged_in %} #}
-              {% if user.hasPermission('administrator') %}
-
-                <div class="col-md-6">
-                  <a href="http://dev.inventaire/form/NewDeviceForm" onclick="window.open(this.href);return false">
-                    
-                    <button class="btn btn-primary gs-btn"><i class="fa fa-plus-circle"></i> New Device </button>
-                  </a>
-                </div>
-               {% else %} 
-                <div class="col-md-6">
-                  <a >
-                    <button style="cursor:not-allowed;border:none;" class="btn btn-primary gs-btn" disabled> New Device </button>
-                  </a>
-                </div>
-              {% endif %}
-            </div>
-        
-    </div>
-    
-  </div>
-
-{#
-  <div{{ content_attributes }}>
+  <table {{ content_attributes.addClass('gs-table table table-light table-striped') }} >
     {{ content }}
-  </div>
-#}
+  </table>
+
+ 
+    <a href="http://dev.inventaire/devices" > 
+       <button class="btn btn-primary gs-btn btn-GoBack">Go Back</button> 
+    </a>
+ 
+
 </article>

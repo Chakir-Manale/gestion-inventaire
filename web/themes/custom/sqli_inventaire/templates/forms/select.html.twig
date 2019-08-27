@@ -13,7 +13,8 @@
  */
 #}
 {% spaceless %}
-  <select{{ attributes.addClass('form-control') }}>
+  <select{{ attributes.addClass('form-control') }} style="
+    height: 3.6rem;" >
     {% for option in options %}
       {% if option.type == 'optgroup' %}
         <optgroup label="{{ option.label }}">

@@ -22,81 +22,93 @@ class inventaireForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) 
   {
-#REGION    
+#REGION   
+    $form['ID'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('ID Pc :'),
+      '#maxlength' => 50,
+      '#required' => true,
+    ]; 
+
     $form['nom_collab'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Nom_Collab :'),
+      '#title' => $this->t('Nom Collab :'),
       '#maxlength' => 50,      
       '#required' => true,
     ];
+
     $form['prenom_collab'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Prenom_Collab :'),
+      '#title' => $this->t('Prenom Collab :'),
       '#maxlength' => 50,
       '#required' => true,
     ];
+
     $form['type_machine'] = [
       '#type' => 'select',
-      '#title' => $this->t('type_machine :'),
+      '#title' => $this->t('type Pc :'),
       '#options' => array(
         'Fixe' => t('Fixe'),
         'Portable' => t('Portable'),
       ),
       '#required' => true,
     ];
+
     $form['marque'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Marque :'),
       '#default_value' => $this->t('DELL'),
       '#required' => true,
     ];
+
     $form['model'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Modele :'),
       '#maxlength' => 50,
       '#required' => true,
     ];
-      $form['num_serie'] = [
+
+    $form['num_serie'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Num_Serie :'),
+      '#title' => $this->t('Num Serie :'),
       '#maxlength' => 50,
         '#required' => true,
     ];
-    $form['ID'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('ID_inventaire :'),
-      '#maxlength' => 50,
-      '#required' => true,
-    ];
+    
     $form['Date_Livraison'] = [
       '#type' => 'date',
-      '#title' => $this->t('Date_Livraison :'),
+      '#title' => $this->t('Date Livraison :'),
       '#required' => true,
     ];
+
     $form['Date_Fin_Garantie'] = [
       '#type' => 'date',
-      '#title' => $this->t('Date_Fin_Garantie :'),
+      '#title' => $this->t('Date Fin Garantie :'),
       '#required' => true,
     ];
+
     $form['Date_Affectation'] = [
       '#type' => 'date',
-      '#title' => $this->t('Date_Affectation :'),
+      '#title' => $this->t('Date Affectation :'),
       '#required' => true,
     ];
+
     $form['CPU'] = [
       '#type' => 'textfield',
       '#title' => $this->t('CPU :'),
       '#maxlength' => 50,
       '#required' => true,
     ];
+
     $form['RAM'] = [
       '#type' => 'textfield',
       '#title' => $this->t('RAM :'),
       '#maxlength' => 50,
       '#required' => true,
     ];
+
     $form['TypeHDD'] = [
-      '#title' => $this->t('TypeHDD :'),
+      '#title' => $this->t('Type HDD :'),
       '#type' => 'select',
       '#options' => array(
         'SSD_M2' => t('SSD M2'),
@@ -105,6 +117,7 @@ class inventaireForm extends FormBase {
       ),
       '#required' => true,
     ];
+
     $form['Capacite'] = [
       '#title' => $this->t('Capacite :'),
       '#type' => 'select',
@@ -116,18 +129,21 @@ class inventaireForm extends FormBase {
       ),
       '#required' => true,
     ];
+    
     $form['Taille_Ecran'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Taille_Ecran :'),
+      '#title' => $this->t('Taille Ecran :'),
       '#maxlength' => 50,
       '#required' => true,
     ];
+
     $form['num_serie_ecran'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Num_Serie_ecran :'),
+      '#title' => $this->t('Num Serie ecran :'),
       '#maxlength' => 50,
       '#required' => true,
     ];
+
     $form['Souris'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Souris :'),
@@ -135,6 +151,7 @@ class inventaireForm extends FormBase {
       '#maxlength' => 50,
       '#required' => true,
     ];
+
     $form['Clavier'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Clavier :'),
@@ -142,22 +159,26 @@ class inventaireForm extends FormBase {
       '#maxlength' => 50,
       '#required' => true,
     ];
+
     $form['Adaptateur'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Adaptateur :'),
       '#required' => true,
     ];
+
     $form['Casque'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Casque :'),
       '#required' => true,
     ];
+
     $form['num_serie_casque'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Num_Serie_casque :'),
+      '#title' => $this->t('Num Serie casque :'),
       '#maxlength' => 50,
       '#required' => true,
     ];
+
     $form['cancel'] = [
       '#type' => 'submit',
       '#value' => t('Cancel'),
@@ -256,8 +277,6 @@ class inventaireForm extends FormBase {
               catch (Exception $e) {
                 drupal_set_message('Could not create the node.', 'error');
               }
- 
-
   }
 
 }

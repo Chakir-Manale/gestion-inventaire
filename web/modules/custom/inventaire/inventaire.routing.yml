@@ -2,7 +2,7 @@ inventaire.inventaire_form:
   path: '/form/inventaireForm'
   defaults:
     _form: '\Drupal\inventaire\Form\inventaireForm'
-    _title: 'New Product'
+    _title: 'New Laptop'
   requirements:
     _access: 'TRUE'
 
@@ -10,7 +10,7 @@ inventaire.edit_form:
   path: '/form/editForm/{id}'
   defaults:
     _form: '\Drupal\inventaire\Form\editForm'
-    _title: 'Update Product'
+    _title: 'Update Laptop'
   requirements:
     _access: 'TRUE'
 
@@ -22,3 +22,18 @@ inventaire.delete_form:
   requirements:
     _access: 'TRUE'
 
+inventaire.NewDevice_form:
+  path: '/form/NewDeviceForm'
+  defaults:
+    _form: '\Drupal\inventaire\Form\NewDeviceForm'
+    _title: 'New Device'
+  requirements:
+    _access: 'TRUE'
+
+inventaire.EditDevice_form:
+  path: '/form/EditDeviceForm/{id}'
+  defaults:
+    _form: '\Drupal\inventaire\Form\EditDeviceForm'
+    _title: 'Update Device'
+  requirements:
+    _access: 'TRUE'

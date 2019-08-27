@@ -11,6 +11,7 @@
         width: 90rem;
         max-width: 100rem; 
         background: linear-gradient(to right bottom, white , lightslategrey );
+        min-height: 60vh;
     }
 
     &_group{
@@ -30,9 +31,9 @@
                 margin-bottom: 0.5rem;
                 font-size: medium;
                 color: black;
-                font-weight: bold;
-             
+                font-weight: bold;      
         }
+       
     }      
     .submit{
         padding: 0.4rem;
@@ -42,10 +43,8 @@
         margin: 2.4rem 2rem 0 auto;
     
     }
-   // .submit:hover{ background: green; border: green;   } 
-
-} 
- 
+    
+}  
 .gs-Loginform {
  
     //min-height: 100vh; 
@@ -90,6 +89,7 @@
         width: 46rem;
         max-width: 100rem; 
         background: linear-gradient(to right bottom, white , lightslategrey );
+        
     }
     .Login{
         background: royalblue;

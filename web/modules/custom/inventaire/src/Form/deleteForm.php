@@ -26,15 +26,16 @@ class deleteForm extends FormBase  {
 #REGION   
         $node = Node::load($id); 
 
-         //th enode id 
+         //the node id 
         $form['id'] = [
           '#type' => 'hidden',
           '#title' => $this->t('nid :'),
           '#default_value' => $node->id(),
           '#disabled' => TRUE,
         ]; 
-
-        $form['title'] = [
+       
+ if (strpos($node->title->value, 'Device') !== false) {
+    $form['title'] = [
           '#type' => 'textfield',
           '#default_value' => 'Title: '.$node->title->value,
           '#disabled' => TRUE,
@@ -43,9 +44,26 @@ class deleteForm extends FormBase  {
          //the attribute ID      
         $form['ID'] = [
           '#type' => 'textfield',
-          '#default_value' => 'ID: '.$node->get('field_id')->value,
+          '#default_value' => 'ID: '.$node->get('field_id_device')->value,
           '#disabled' => TRUE,
         ];
+} else if (strpos($node->title->value, 'Ordinateur') !== false){
+   
+  $form['title'] = [
+    '#type' => 'textfield',
+    '#default_value' => 'Title: '.$node->title->value,
+    '#disabled' => TRUE,
+  ];
+  
+   //the attribute ID      
+  $form['ID'] = [
+    '#type' => 'textfield',
+    '#default_value' => 'ID: '.$node->get('field_id')->value,
+    '#disabled' => TRUE,
+  ];
+}
+
+       
 
         $form['cancel'] = array(
           '#type' => 'submit',
@@ -64,9 +82,18 @@ class deleteForm extends FormBase  {
         
 
   public function DeleteFormCancel(array &$form, FormStateInterface $form_state) {
-    $url = Url::fromRoute('view.listing_page.page_1');
-    return $form_state->setRedirectUrl($url); 
-  }
+    $fields = $form_state -> getValues(); 
+    $node = Node::load( $fields['id']);
+    if (strpos($node->title->value, 'Device') !== false) {
+
+      $url = Url::fromRoute('view.devices_list.page_1');
+      return $form_state->setRedirectUrl($url);
+    }
+    else if (strpos($node->title->value, 'Ordinateur') !== false){
+        $url = Url::fromRoute('view.listing_page.page_1');
+        return $form_state->setRedirectUrl($url);
+      }    
+   }
   
 
   /**
@@ -94,9 +121,9 @@ class deleteForm extends FormBase  {
       drupal_set_message('Could not DELETE machine .', 'error');
       }
       
-    $url = Url::fromRoute('view.listing_page.page_1');
-    return $form_state->setRedirectUrl($url);
-
+      $url = Url::fromRoute('view.devices_list.page_1');
+      return $form_state->setRedirectUrl($url);
+    
   }//End Formsubmit 
 
 }//endClass
