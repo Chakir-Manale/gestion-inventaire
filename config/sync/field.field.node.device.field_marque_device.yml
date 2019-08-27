@@ -1,0 +1,19 @@
+uuid: ef7eac51-1c1e-4775-a1cb-56cb3b3c181e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marque_device
+    - node.type.device
+id: node.device.field_marque_device
+field_name: field_marque_device
+entity_type: node
+bundle: device
+label: marque
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

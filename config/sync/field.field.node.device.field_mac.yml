@@ -1,0 +1,19 @@
+uuid: 25ab0a01-b6d5-466f-bae0-9594e0caad16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mac
+    - node.type.device
+id: node.device.field_mac
+field_name: field_mac
+entity_type: node
+bundle: device
+label: MAC
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

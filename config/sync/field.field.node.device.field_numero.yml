@@ -1,0 +1,19 @@
+uuid: 9ce5c597-6542-46aa-a1e8-3eee31fd9c27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero
+    - node.type.device
+id: node.device.field_numero
+field_name: field_numero
+entity_type: node
+bundle: device
+label: Numero
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,91 @@
+uuid: 3ff35da4-4986-4bb8-b100-b6c9ea9cd3c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.device.field_id_device
+    - field.field.node.device.field_mac
+    - field.field.node.device.field_marque_device
+    - field.field.node.device.field_nom_collab
+    - field.field.node.device.field_numero
+    - field.field.node.device.field_prenom_collab
+    - field.field.node.device.field_skill_center
+    - field.field.node.device.field_type_device
+    - node.type.device
+  module:
+    - user
+id: node.device.default
+targetEntityType: node
+bundle: device
+mode: default
+content:
+  field_id_device:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_mac:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_marque_device:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nom_collab:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_numero:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_prenom_collab:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_skill_center:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_type_device:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

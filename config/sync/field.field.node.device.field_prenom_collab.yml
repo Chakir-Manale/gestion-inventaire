@@ -1,0 +1,19 @@
+uuid: c1d14a9a-752b-4f03-b5e2-ea50737274fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prenom_collab
+    - node.type.device
+id: node.device.field_prenom_collab
+field_name: field_prenom_collab
+entity_type: node
+bundle: device
+label: Prenom_Collab
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -10,7 +10,7 @@ dependencies:
 id: sqli_inventaire_inventaire
 theme: sqli_inventaire
 region: content
-weight: 0
+weight: -3
 provider: null
 plugin: id_inventaire
 settings:

@@ -1,22 +1,24 @@
-uuid: 37bf7b83-6e1a-4b5f-8ae9-c95930777677
+uuid: b4084f88-951a-4da6-baa7-9e74dfbdb81b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_date_fin_garantie
-    - field.storage.node.field_id
+    - field.storage.node.field_id_device
+    - field.storage.node.field_mac
+    - field.storage.node.field_marque_device
     - field.storage.node.field_nom_collab
-    - field.storage.node.field_num_serie
+    - field.storage.node.field_numero
     - field.storage.node.field_prenom_collab
-    - field.storage.node.field_type
-    - node.type.ordinateurs
+    - field.storage.node.field_skill_center
+    - field.storage.node.field_type_device
+    - node.type.device
   module:
     - node
     - user
-id: listing_page
-label: 'Listing Page'
+id: devices_list
+label: 'Devices List'
 module: views
-description: 'Liste des ordibateurs en stock'
+description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -60,17 +62,17 @@ display:
           offset: 0
           id: 0
           total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 20,25, 50'
+            items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
       style:
         type: table
         options:
@@ -83,73 +85,57 @@ display:
           summary: ''
           description: ''
           columns:
-            nid: nid
-            field_id: field_id
-            field_ram: field_ram
-            field_cpu: field_cpu
-            field_marque: field_marque
-            field_type: field_type
-            view_node: view_node
-            nothing: nothing
-            nothing_1: nothing_1
+            title: title
+            field_id_device: field_id_device
+            field_nom_collab: field_nom_collab
+            field_prenom_collab: field_prenom_collab
+            field_numero: field_numero
+            field_skill_center: field_skill_center
+            field_mac: field_mac
           info:
-            nid:
+            title:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_id:
+            field_id_device:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_ram:
+            field_nom_collab:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_cpu:
+            field_prenom_collab:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_marque:
+            field_numero:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_type:
+            field_skill_center:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            view_node:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            nothing:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            nothing_1:
+            field_mac:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -157,7 +143,7 @@ display:
               empty_column: false
               responsive: ''
           default: '-1'
-          empty_table: false
+          empty_table: true
       row:
         type: fields
       fields:
@@ -170,72 +156,6 @@ display:
           admin_label: ''
           label: '#'
           exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: node
-          entity_field: nid
-          plugin_id: field
-        field_id:
-          id: field_id
-          table: node__field_id
-          field: field_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ID
-          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -290,6 +210,71 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+        field_id_device:
+          id: field_id_device
+          table: node__field_id_device
+          field: field_id_device
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ID
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
           plugin_id: field
         field_nom_collab:
           id: field_nom_collab
@@ -298,7 +283,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Nom
+          label: Nom_Collab
           exclude: false
           alter:
             alter_text: false
@@ -361,7 +346,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Prenom
+          label: Prenom_Collab
           exclude: false
           alter:
             alter_text: false
@@ -417,14 +402,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_type:
-          id: field_type
-          table: node__field_type
-          field: field_type
+        field_type_device:
+          id: field_type_device
+          table: node__field_type_device
+          field: field_type_device
           relationship: none
           group_type: group
           admin_label: ''
-          label: Type
+          label: type
           exclude: false
           alter:
             alter_text: false
@@ -480,14 +465,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_num_serie:
-          id: field_num_serie
-          table: node__field_num_serie
-          field: field_num_serie
+        field_numero:
+          id: field_numero
+          table: node__field_numero
+          field: field_numero
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Service tag'
+          label: Numero
           exclude: false
           alter:
             alter_text: false
@@ -543,14 +528,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_date_fin_garantie:
-          id: field_date_fin_garantie
-          table: node__field_date_fin_garantie
-          field: field_date_fin_garantie
+        field_marque_device:
+          id: field_marque_device
+          table: node__field_marque_device
+          field: field_marque_device
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Date Fin Garantie'
+          label: Marque
           exclude: false
           alter:
             alter_text: false
@@ -606,14 +591,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        view_node:
-          id: view_node
-          table: node
-          field: view_node
+        field_skill_center:
+          id: field_skill_center
+          table: node__field_skill_center
+          field: field_skill_center
           relationship: none
           group_type: group
           admin_label: ''
-          label: Actions
+          label: 'Skill Center'
           exclude: false
           alter:
             alter_text: false
@@ -645,8 +630,8 @@ display:
           element_type: ''
           element_class: ''
           element_label_type: ''
-          element_label_class: action_view
-          element_label_colon: false
+          element_label_class: ''
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -654,11 +639,84 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: View
-          output_url_as_text: false
-          absolute: false
-          entity_type: node
-          plugin_id: entity_link
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_mac:
+          id: field_mac
+          table: node__field_mac
+          field: field_mac
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: MAC
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -666,13 +724,13 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Actions
           exclude: false
           alter:
             alter_text: true
             text: Edit
             make_link: true
-            path: 'http://dev.inventaire/form/editForm/{{nid}}'
+            path: '/form/EditDeviceForm/{{nid}}'
             absolute: false
             external: false
             replace_spaces: false
@@ -698,7 +756,7 @@ display:
           element_type: ''
           element_class: ''
           element_label_type: ''
-          element_label_class: action_Edit
+          element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
@@ -748,7 +806,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -774,57 +832,10 @@ display:
           table: node_field_data
           field: type
           value:
-            ordinateurs: ordinateurs
+            device: device
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        field_id_value:
-          id: field_id_value
-          table: node__field_id
-          field: field_id_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_id_value_op
-            label: 'search by ID : '
-            description: 'search by ID : '
-            use_operator: false
-            operator: field_id_value_op
-            identifier: field_id_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              anonymous: anonymous
-              authenticated: authenticated
-              administrator: administrator
-            placeholder: 'search by ID : '
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: 'ID (field_id)'
-            description: null
-            identifier: field_id_value
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1: {  }
-              2: {  }
-              3: {  }
-          plugin_id: numeric
       sorts:
         created:
           id: created
@@ -841,7 +852,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Laptops List'
+      title: 'Devices List'
       header: {  }
       footer: {  }
       empty: {  }
@@ -853,17 +864,18 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_date_fin_garantie'
-        - 'config:field.storage.node.field_id'
+        - 'config:field.storage.node.field_id_device'
+        - 'config:field.storage.node.field_mac'
+        - 'config:field.storage.node.field_marque_device'
         - 'config:field.storage.node.field_nom_collab'
-        - 'config:field.storage.node.field_num_serie'
+        - 'config:field.storage.node.field_numero'
         - 'config:field.storage.node.field_prenom_collab'
-        - 'config:field.storage.node.field_type'
+        - 'config:field.storage.node.field_skill_center'
+        - 'config:field.storage.node.field_type_device'
   page_1:
     display_plugin: page
     id: page_1
@@ -871,20 +883,21 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: ordinateurs
+      path: devices
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_date_fin_garantie'
-        - 'config:field.storage.node.field_id'
+        - 'config:field.storage.node.field_id_device'
+        - 'config:field.storage.node.field_mac'
+        - 'config:field.storage.node.field_marque_device'
         - 'config:field.storage.node.field_nom_collab'
-        - 'config:field.storage.node.field_num_serie'
+        - 'config:field.storage.node.field_numero'
         - 'config:field.storage.node.field_prenom_collab'
-        - 'config:field.storage.node.field_type'
+        - 'config:field.storage.node.field_skill_center'
+        - 'config:field.storage.node.field_type_device'
