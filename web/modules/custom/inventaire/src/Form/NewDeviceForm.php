@@ -112,6 +112,15 @@ class NewDeviceForm extends FormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) 
   {
     parent::validateForm($form, $form_state);
+    
+    if(!preg_match('/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-F]{2})$/',$form_state->getValue('Mac_Address'))) {
+      $form_state->setErrorByName('Mac_Address',"L'adresse' '".$form_state->getValue('Mac_Address')."' n'est pas valide");
+    }
+
+    if(!preg_match('/^(\+212|0)([ \-_]*)(\d[ \-_]*){9}$/',$form_state->getValue('Numero'))) {
+      $form_state->setErrorByName('Numero',"the number '".$form_state->getValue('Numero')."'should be like:+212 6 ** ** ** ** ou 06 ** ** ** **");
+    }
+   
   }
 
   /**

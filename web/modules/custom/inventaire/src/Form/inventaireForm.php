@@ -224,7 +224,7 @@ class inventaireForm extends FormBase {
     if(!preg_match('/^[0-9]{1,3}$/',$form_state->getValue('RAM'))) {
         $form_state->setErrorByName('RAM',"La RAM '".$form_state->getValue('RAM')."' n'est pas valide");
     }
-    if(!preg_match('/^[0-9]$/',$form_state->getValue('ID'))) {
+    if(!preg_match('/^[0-9A-Za-z]+$/',$form_state->getValue('ID'))) {
         $form_state->setErrorByName('ID'," l'ID '".$form_state->getValue('ID')."' n'est pas valide");
     }
   }
@@ -244,7 +244,7 @@ class inventaireForm extends FormBase {
                 'field_type' => $fields['type_machine'],
                 'field_marque' => $fields['marque'],              
                 'field_modele' => $fields['model'],       
-                'field_num_serie' => $fields['model'],            
+                'field_num_serie' => $fields['num_serie'],            
                 'field_id' => $fields['ID'],              
                 'field_date_livraison' => $fields['Date_Livraison'],            
                 'field_date_fin_garantie' => $fields['Date_Fin_Garantie'],            

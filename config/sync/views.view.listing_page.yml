@@ -1,4 +1,4 @@
-uuid: 37bf7b83-6e1a-4b5f-8ae9-c95930777677
+uuid: def8c844-b6c2-40e9-a82a-2d8fbbc3ac47
 langcode: en
 status: true
 dependencies:
@@ -9,17 +9,16 @@ dependencies:
     - field.storage.node.field_num_serie
     - field.storage.node.field_prenom_collab
     - field.storage.node.field_type
-    - node.type.ordinateurs
+    - search_api.index.ordinateurs
   module:
-    - node
-    - user
+    - search_api
 id: listing_page
 label: 'Listing Page'
 module: views
-description: 'Liste des ordibateurs en stock'
+description: ''
 tag: ''
-base_table: node_field_data
-base_field: nid
+base_table: search_api_index_ordinateurs
+base_field: search_api_id
 core: 8.x
 display:
   default:
@@ -29,28 +28,25 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          perm: 'access content'
+        type: none
+        options: {  }
       cache:
-        type: tag
+        type: search_api_tag
         options: {  }
       query:
         type: views_query
         options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
+          skip_access: 0
+          bypass_access: 0
+          preserve_facet_query_args: 0
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
@@ -60,17 +56,17 @@ display:
           offset: 0
           id: 0
           total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 20,25, 50'
+            items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
       style:
         type: table
         options:
@@ -85,17 +81,16 @@ display:
           columns:
             nid: nid
             field_id: field_id
-            field_ram: field_ram
-            field_cpu: field_cpu
-            field_marque: field_marque
+            field_nom_collab: field_nom_collab
+            field_prenom_collab: field_prenom_collab
             field_type: field_type
-            view_node: view_node
+            field_num_serie: field_num_serie
+            field_date_fin_garantie: field_date_fin_garantie
             nothing: nothing
             nothing_1: nothing_1
+            nothing_2: nothing_2
           info:
             nid:
-              sortable: false
-              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -107,37 +102,27 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_ram:
-              sortable: false
-              default_sort_order: asc
+            field_nom_collab:
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_cpu:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_marque:
-              sortable: false
-              default_sort_order: asc
+            field_prenom_collab:
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_type:
-              sortable: false
-              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            view_node:
-              sortable: false
-              default_sort_order: asc
+            field_num_serie:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_date_fin_garantie:
               align: ''
               separator: ''
               empty_column: false
@@ -156,14 +141,21 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            nothing_2:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
           default: '-1'
-          empty_table: false
+          empty_table: true
       row:
         type: fields
       fields:
         nid:
           id: nid
-          table: node_field_data
+          table: search_api_datasource_ordinateurs_entity_node
           field: nid
           relationship: none
           group_type: group
@@ -201,7 +193,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -224,17 +216,34 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_numeric
+          fallback_options:
+            set_precision: false
+            precision: 0
+            decimal: .
+            separator: ','
+            format_plural: false
+            format_plural_string: !!binary MQNAY291bnQ=
+            prefix: ''
+            suffix: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            format_plural_values:
+              - '1'
+              - '@count'
           entity_type: node
-          entity_field: nid
-          plugin_id: field
+          plugin_id: search_api_field
         field_id:
           id: field_id
-          table: node__field_id
+          table: search_api_index_ordinateurs
           field: field_id
           relationship: none
           group_type: group
           admin_label: ''
-          label: ID
+          label: 'ID  '
           exclude: false
           alter:
             alter_text: false
@@ -290,15 +299,33 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+          field_rendering: true
+          fallback_handler: search_api_numeric
+          fallback_options:
+            set_precision: false
+            precision: 0
+            decimal: .
+            separator: ','
+            format_plural: false
+            format_plural_string: !!binary MQNAY291bnQ=
+            prefix: ''
+            suffix: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            format_plural_values:
+              - '1'
+              - '@count'
+          plugin_id: search_api_field
         field_nom_collab:
           id: field_nom_collab
-          table: node__field_nom_collab
+          table: search_api_datasource_ordinateurs_entity_node
           field: field_nom_collab
           relationship: none
           group_type: group
           admin_label: ''
-          label: Nom
+          label: 'Nom Collab'
           exclude: false
           alter:
             alter_text: false
@@ -353,15 +380,23 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          entity_type: node
+          plugin_id: search_api_field
         field_prenom_collab:
           id: field_prenom_collab
-          table: node__field_prenom_collab
+          table: search_api_datasource_ordinateurs_entity_node
           field: field_prenom_collab
           relationship: none
           group_type: group
           admin_label: ''
-          label: Prenom
+          label: 'Prenom Collab'
           exclude: false
           alter:
             alter_text: false
@@ -416,10 +451,18 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          entity_type: node
+          plugin_id: search_api_field
         field_type:
           id: field_type
-          table: node__field_type
+          table: search_api_datasource_ordinateurs_entity_node
           field: field_type
           relationship: none
           group_type: group
@@ -479,15 +522,23 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
-        field_num_serie:
-          id: field_num_serie
-          table: node__field_num_serie
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          entity_type: node
+          plugin_id: search_api_field
+        field_num_serie_1:
+          id: field_num_serie_1
+          table: search_api_index_ordinateurs
           field: field_num_serie
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Service tag'
+          label: 'Num Serie '
           exclude: false
           alter:
             alter_text: false
@@ -542,10 +593,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
         field_date_fin_garantie:
           id: field_date_fin_garantie
-          table: node__field_date_fin_garantie
+          table: search_api_datasource_ordinateurs_entity_node
           field: field_date_fin_garantie
           relationship: none
           group_type: group
@@ -605,60 +663,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
-        view_node:
-          id: view_node
-          table: node
-          field: view_node
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Actions
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: action_view
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          text: View
-          output_url_as_text: false
-          absolute: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
           entity_type: node
-          plugin_id: entity_link
+          plugin_id: search_api_field
         nothing:
           id: nothing
           table: views
@@ -666,13 +679,13 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Actions
           exclude: false
           alter:
             alter_text: true
-            text: Edit
+            text: view
             make_link: true
-            path: 'http://dev.inventaire/form/editForm/{{nid}}'
+            path: '/node/{{nid}}'
             absolute: false
             external: false
             replace_spaces: false
@@ -698,7 +711,7 @@ display:
           element_type: ''
           element_class: ''
           element_label_type: ''
-          element_label_class: action_Edit
+          element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
@@ -710,6 +723,55 @@ display:
           plugin_id: custom
         nothing_1:
           id: nothing_1
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: Edit
+            make_link: true
+            path: '/form/editForm/{{nid}}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
+        nothing_2:
+          id: nothing_2
           table: views
           field: nothing
           relationship: none
@@ -748,7 +810,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -758,93 +820,123 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            ordinateurs: ordinateurs
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-        field_id_value:
-          id: field_id_value
-          table: node__field_id
-          field: field_id_value
+        search_api_datasource:
+          id: search_api_datasource
+          table: search_api_index_ordinateurs
+          field: search_api_datasource
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
+          operator: or
           value:
-            min: ''
-            max: ''
-            value: ''
+            'entity:node': 'entity:node'
           group: 1
-          exposed: true
+          exposed: false
           expose:
-            operator_id: field_id_value_op
-            label: 'search by ID : '
-            description: 'search by ID : '
+            operator_id: ''
+            label: ''
+            description: ''
             use_operator: false
-            operator: field_id_value_op
-            identifier: field_id_value
+            operator: ''
+            identifier: ''
             required: false
             remember: false
             multiple: false
             remember_roles:
-              anonymous: anonymous
               authenticated: authenticated
-              administrator: administrator
-            placeholder: 'search by ID : '
-            min_placeholder: ''
-            max_placeholder: ''
+            reduce: false
           is_grouped: false
           group_info:
-            label: 'ID (field_id)'
-            description: null
-            identifier: field_id_value
+            label: ''
+            description: ''
+            identifier: ''
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items:
-              1: {  }
-              2: {  }
-              3: {  }
-          plugin_id: numeric
-      sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_datasource
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_ordinateurs
+          field: search_api_fulltext
           relationship: none
           group_type: group
           admin_label: ''
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Search by Term :'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            identifier: search_api_fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: 'Search by Term :'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields:
+            - field_date_fin_garantie
+            - field_id
+            - field_nom_collab
+            - field_num_serie
+            - field_prenom_collab
+            - field_type
+          plugin_id: search_api_fulltext
+      sorts:
+        search_api_id:
+          id: search_api_id
+          table: search_api_index_ordinateurs
+          field: search_api_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
           exposed: false
           expose:
             label: ''
-          granularity: second
-      title: 'Laptops List'
+          plugin_id: search_api
+      title: 'Listing Page'
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<h3 id="gs-noResult-Msg"> No Result found, Try again  </h3>'
+            format: restricted_html
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
@@ -855,8 +947,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_date_fin_garantie'
         - 'config:field.storage.node.field_id'
@@ -879,8 +969,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_date_fin_garantie'
         - 'config:field.storage.node.field_id'

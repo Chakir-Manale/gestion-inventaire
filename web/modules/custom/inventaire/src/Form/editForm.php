@@ -33,6 +33,15 @@ class editForm extends FormBase  {
           '#maxlength' => 50,      
           '#required' => true,
         ];
+
+        $form['ID'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('ID_inventaire :'),
+          '#default_value' => $node->get('field_id')->value,
+          '#disabled' => true,
+          '#required' => true,
+        ];
+
         $form['nom_collab'] = [
         '#type' => 'textfield',
         '#title' => $this->t('Nom_Collab :'),
@@ -78,13 +87,7 @@ class editForm extends FormBase  {
         '#maxlength' => 50,
         '#required' => true,
       ];
-      $form['ID'] = [
-        '#type' => 'textfield',
-        '#title' => $this->t('ID_inventaire :'),
-        '#default_value' => $node->get('field_id')->value,
-        '#maxlength' => 50,
-        '#required' => true,
-      ];
+     
       $form['Date_Livraison'] = [
         '#type' => 'date',
         '#title' => $this->t('Date_Livraison :'),
@@ -252,7 +255,7 @@ class editForm extends FormBase  {
       $node->field_type->value =  $fields['type_machine'];
       $node->field_marque->value =  $fields['marque'];              
       $node->field_modele->value =  $fields['model'];       
-      $node->field_num_serie->value =  $fields['model'];            
+      $node->field_num_serie->value =  $fields['num_serie'];            
       $node->field_id->value =  $fields['ID'];              
       $node->field_date_livraison->value =  $fields['Date_Livraison'];            
       $node->field_date_fin_garantie->value =  $fields['Date_Fin_Garantie'];            

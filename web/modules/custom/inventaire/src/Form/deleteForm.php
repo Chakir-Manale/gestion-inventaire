@@ -119,11 +119,17 @@ class deleteForm extends FormBase  {
       }
        catch (Exception $e) {
       drupal_set_message('Could not DELETE machine .', 'error');
+      } 
+       
+      if (strpos($node->title->value, 'Device') !== false) {
+  
+        $url = Url::fromRoute('view.devices_list.page_1');
+        return $form_state->setRedirectUrl($url);
       }
-      
-      $url = Url::fromRoute('view.devices_list.page_1');
-      return $form_state->setRedirectUrl($url);
-    
+      else if (strpos($node->title->value, 'Ordinateur') !== false){
+          $url = Url::fromRoute('view.listing_page.page_1');
+          return $form_state->setRedirectUrl($url);
+        }    
   }//End Formsubmit 
 
 }//endClass

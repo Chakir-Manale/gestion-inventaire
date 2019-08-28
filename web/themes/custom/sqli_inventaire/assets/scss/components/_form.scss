@@ -119,11 +119,16 @@
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
     border-radius: 2rem;
-    width: 10rem;
+    width: 12rem;
     height: 3.5rem;
     font-size: 2rem;
     text-align: center;
     padding-top: 0.3rem;
     margin-left: 1.2rem;
     margin-top: 3rem;
+}
+#gs-noResult-Msg{
+    color: red;
+    font-size: 2rem;
+    font-family: $sans-serif;
 }

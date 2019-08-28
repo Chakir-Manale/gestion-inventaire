@@ -27,7 +27,7 @@ function _inventaire_user_login_form_submit($form, FormStateInterface $form_stat
  * Implements hook_views_pre_view().
  */
 function inventaire_views_pre_view($view, $display_id, array &$args) {
-  if ($view->storage->id() == 'listing_page') {
+  if ($view->storage->id() == 'listing_page' ||$view->storage->id() == 'devices_list') {
   
     $user_roles = \Drupal::currentUser()->getRoles();
     // var_dump( $user_roles); 
@@ -36,6 +36,7 @@ function inventaire_views_pre_view($view, $display_id, array &$args) {
     if (!in_array('administrator', $user_roles)) {
       $view->removeHandler($display_id, 'field', 'nothing');
       $view->removeHandler($display_id, 'field', 'nothing_1');
+      $view->removeHandler($display_id, 'field', 'nothing_2');
     }
   }
 }
