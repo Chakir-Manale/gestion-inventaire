@@ -51,7 +51,11 @@ class inventaireForm extends FormBase {
         'Fixe' => t('Fixe'),
         'Portable' => t('Portable'),
       ),
-      '#required' => true,
+      '#default_value' => $this->t('Fixe'),
+      '#attributes' => [
+        'id' => 'type-machine',
+        'name' => 'input_type_machine',
+      ],
     ];
 
     $form['marque'] = [
@@ -149,7 +153,11 @@ class inventaireForm extends FormBase {
       '#title' => $this->t('Souris :'),
       '#default_value' => $this->t('DELL'),
       '#maxlength' => 50,
-      '#required' => true,
+      '#states' => [
+        'required' => [
+          ':input[name="input_type_machine"]' => ['value' => 'Fixe'],
+        ],
+      ],
     ];
 
     $form['Clavier'] = [
@@ -157,32 +165,34 @@ class inventaireForm extends FormBase {
       '#title' => $this->t('Clavier :'),
       '#default_value' => $this->t('DELL'),
       '#maxlength' => 50,
-      '#required' => true,
+      '#states' => [
+        'required' => [
+          ':input[name="input_type_machine"]' => ['value' => 'Fixe'],
+        ],
+      ],
     ];
 
     $form['Adaptateur'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Adaptateur :'),
-      '#required' => true,
     ];
 
     $form['Casque'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Casque :'),
-      '#required' => true,
     ];
 
     $form['num_serie_casque'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Num Serie casque :'),
       '#maxlength' => 50,
-      '#required' => true,
+      
     ];
 
     $form['cancel'] = [
       '#type' => 'submit',
       '#value' => t('Cancel'),
-      '#submit' => array('::AddNewFormCancel'),
+      '#submit' => array('::FormCancel'),
       '#limit_validation_errors' => array(),
     ];
 
@@ -195,7 +205,7 @@ class inventaireForm extends FormBase {
   }
 #ENDREGION
 
-  public function AddNewFormCancel(array &$form, FormStateInterface $form_state) {
+  public function FormCancel(array &$form, FormStateInterface $form_state) {
     
     $url = Url::fromRoute('view.listing_page.page_1');
     return $form_state->setRedirectUrl($url);
@@ -265,10 +275,10 @@ class inventaireForm extends FormBase {
               try {
                 $node->save();
                 $success = TRUE;
-                drupal_set_message('Added the node.'.$node->id());
+                drupal_set_message('Successfully added the machine.'.$node->id());
                  
                 $ChangeNodeTitle = Node::load($node->id()); 
-                $ChangeNodeTitle->title->value = 'Ordinateur '.$node->id();
+                $ChangeNodeTitle->title->value = 'Ordinateur '.$node->get('field_id')->value;
                 $ChangeNodeTitle->save();
         
                 $url = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()]);

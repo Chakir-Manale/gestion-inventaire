@@ -222,8 +222,8 @@ processor_settings:
     excerpt: true
     excerpt_length: 256
     exclude_fields: {  }
-    prefix: '<strong id="gs-result">'
-    suffix: '</strong>'
+    prefix: '<span class="gs-result">'
+    suffix: '</span>'
     weights:
       postprocess_query: 0
   ignore_character:

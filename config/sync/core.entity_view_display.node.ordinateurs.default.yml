@@ -100,13 +100,12 @@ content:
     type: string
     region: content
   field_id:
-    weight: 0
+    weight: 24
     label: above
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: number_integer
+    type: string
     region: content
   field_marque:
     weight: 4
@@ -210,3 +209,4 @@ content:
     region: content
 hidden:
   links: true
+  search_api_excerpt: true

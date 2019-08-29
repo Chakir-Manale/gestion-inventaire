@@ -301,6 +301,18 @@ i.fa {
     color: blanchedalmond;
     text-shadow: 0 0 0.5em violet, 0 0 0.5em cyan, 0 0 0.5em #fff; }
 
+.gs-result {
+  color: red;
+  background: yellow; }
+
+.gs-searchapi_btn {
+  margin-left: 15rem;
+  font-size: large; }
+
+.gs-searchapi_textfield {
+  width: 23rem;
+  height: 2.5rem; }
+
 .gs-form {
   min-height: 100vh;
   place-items: center;
@@ -407,10 +419,26 @@ i.fa {
     font-weight: bold;
     font-family: sans-serif; }
 
-.gs-export {
+.gs-export_enabled {
   float: right;
   color: #fff;
   background-color: darkcyan;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  border-radius: 2rem;
+  width: 12rem;
+  height: 3.5rem;
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 0.3rem;
+  margin-left: 1.2rem;
+  margin-top: 3rem; }
+
+.gs-export_disabled {
+  background: #B2B3B6;
+  cursor: not-allowed;
+  float: right;
+  color: #fff;
   -webkit-border-radius: 2rem;
   -moz-border-radius: 2rem;
   border-radius: 2rem;

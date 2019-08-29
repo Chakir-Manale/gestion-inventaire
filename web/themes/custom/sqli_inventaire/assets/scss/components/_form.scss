@@ -113,19 +113,40 @@
 }
 
 .gs-export{
-    float: right;
-    color: #fff;
-    background-color: darkcyan;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    border-radius: 2rem;
-    width: 12rem;
-    height: 3.5rem;
-    font-size: 2rem;
-    text-align: center;
-    padding-top: 0.3rem;
-    margin-left: 1.2rem;
-    margin-top: 3rem;
+    
+    &_enabled{
+        float: right;
+        color: #fff;
+        background-color: darkcyan;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        border-radius: 2rem;
+        width: 12rem;
+        height: 3.5rem;
+        font-size: 2rem;
+        text-align: center;
+        padding-top: 0.3rem;
+        margin-left: 1.2rem;
+        margin-top: 3rem;
+    }
+
+    &_disabled{
+        background:#B2B3B6;
+        cursor:not-allowed;
+        float: right;
+        color: #fff;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        border-radius: 2rem;
+        width: 12rem;
+        height: 3.5rem;
+        font-size: 2rem;
+        text-align: center;
+        padding-top: 0.3rem;
+        margin-left: 1.2rem;
+        margin-top: 3rem;
+        
+    }
 }
 #gs-noResult-Msg{
     color: red;

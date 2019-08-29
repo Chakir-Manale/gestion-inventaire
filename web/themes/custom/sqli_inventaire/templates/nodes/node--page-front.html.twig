@@ -87,14 +87,14 @@
             <div class="row" style="padding-top: 1.5rem;"> 
 
                 <div class="col-md-6">
-                  <a href="http://dev.inventaire/ordinateurs" onclick="window.open(this.href);return false"> 
+                  <a href="/ordinateurs" onclick="window.open(this.href);return false"> 
                       <button class="btn btn-primary gs-btn"><i class="fa fa-laptop"></i> Laptops List</button> 
                   </a>
                 </div>
 
 
                <div class="col-md-6">
-                  <a href="http://dev.inventaire/devices" onclick="window.open(this.href);return false"> 
+                  <a href="/devices" onclick="window.open(this.href);return false"> 
                       <button class="btn btn-primary gs-btn"><i class="fa fa-mobile-alt"></i>Devices List</button> 
                   </a>
                 </div>
@@ -106,7 +106,7 @@
               
               {% if user.hasPermission('administrator') %}
                 <div class="col-md-6">
-                  <a href="http://dev.inventaire/form/inventaireForm" onclick="window.open(this.href);return false">
+                  <a href="/form/inventaireForm" onclick="window.open(this.href);return false">
                     <button class="btn btn-primary gs-btn"><i class="fa fa-plus-circle"></i> New PC </button>
                   </a>
                 </div>
@@ -123,7 +123,7 @@
               {% if user.hasPermission('administrator') %}
 
                 <div class="col-md-6">
-                  <a href="http://dev.inventaire/form/NewDeviceForm" onclick="window.open(this.href);return false">
+                  <a href="/form/NewDeviceForm" onclick="window.open(this.href);return false">
                     
                     <button class="btn btn-primary gs-btn"><i class="fa fa-plus-circle"></i> New Device </button>
                   </a>

@@ -10,6 +10,7 @@ module:
   config: 0
   contact: 0
   content_export_csv: 0
+  content_sync: 0
   contentimport: 0
   contextual: 0
   csv_serialization: 0

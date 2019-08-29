@@ -38,7 +38,7 @@ class editForm extends FormBase  {
           '#type' => 'textfield',
           '#title' => $this->t('ID_inventaire :'),
           '#default_value' => $node->get('field_id')->value,
-          '#disabled' => true,
+          //'#disabled' => true,
           '#required' => true,
         ];
 
@@ -275,7 +275,7 @@ class editForm extends FormBase  {
 
     try { 
          $node->id->value = $fields['id'];
-         $node->title->value = 'Ordinateur '. $fields['id'];
+         $node->title->value = 'Ordinateur '. $fields['ID']; 
          $node->save();
          $success = TRUE;
          drupal_set_message('successfuly updated the laptop.'.$node->id(), 'status');

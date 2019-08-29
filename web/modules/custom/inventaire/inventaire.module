@@ -21,22 +21,25 @@ function inventaire_form_user_login_form_alter(&$form, FormStateInterface $form_
  */
 function _inventaire_user_login_form_submit($form, FormStateInterface $form_state) {
     $form_state->setRedirect('<front>');
-
-}
+  }
 /**
  * Implements hook_views_pre_view().
  */
 function inventaire_views_pre_view($view, $display_id, array &$args) {
-  if ($view->storage->id() == 'listing_page' ||$view->storage->id() == 'devices_list') {
-  
+ 
     $user_roles = \Drupal::currentUser()->getRoles();
     // var_dump( $user_roles); 
     /* authenticated */  
-    
     if (!in_array('administrator', $user_roles)) {
-      $view->removeHandler($display_id, 'field', 'nothing');
-      $view->removeHandler($display_id, 'field', 'nothing_1');
-      $view->removeHandler($display_id, 'field', 'nothing_2');
+
+      if ($view->storage->id() == 'listing_page' ) {
+      $view->removeHandler($display_id, 'field', 'nothing_1'); //l'action: edit (nothing_1 is the id of the button )
+      $view->removeHandler($display_id, 'field', 'nothing_2'); //l'action: delete
+      }
+
+      if ($view->storage->id() == 'devices_list') {
+        $view->removeHandler($display_id, 'field', 'nothing'); //l'action: edit
+        $view->removeHandler($display_id, 'field', 'nothing_1'); //l'action: delete     
     }
   }
 }

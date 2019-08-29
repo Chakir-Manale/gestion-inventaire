@@ -102,11 +102,12 @@ content:
     type: string_textfield
     region: content
   field_id:
-    weight: 129
+    weight: 146
     settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: number
+    type: string_textfield
     region: content
   field_marque:
     weight: 130

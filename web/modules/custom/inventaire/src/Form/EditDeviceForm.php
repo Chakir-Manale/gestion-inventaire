@@ -38,20 +38,19 @@ class EditDeviceForm extends FormBase  {
           '#title' => $this->t('ID Device :'),
           '#default_value' => $node->get('field_id_device')->value,
           '#required' => true,
+          '#disabled' => true,
         ];  
     
         $form['nom_collab'] = [
           '#type' => 'textfield',
           '#title' => $this->t('Nom Collab :'),
-          '#default_value' => $node->get('field_nom_collab')->value,      
-          '#required' => true,
+          '#default_value' => $node->get('field_nom_collab')->value,        
         ];
     
         $form['prenom_collab'] = [
           '#type' => 'textfield',
           '#title' => $this->t('Prenom Collab :'),
           '#default_value' => $node->get('field_nom_collab')->value,
-          '#required' => true,
         ];
         $form['Type'] = [
           '#title' => $this->t('Type :'),
@@ -86,7 +85,6 @@ class EditDeviceForm extends FormBase  {
           '#type' => 'textfield',
           '#title' => $this->t('Skill Center :'),
           '#default_value' => $node->get('field_skill_center')->value,
-          '#required' => true,
         ];
           $form['Mac_Address'] = [
           '#type' => 'textfield',
@@ -123,11 +121,11 @@ class EditDeviceForm extends FormBase  {
   {
      parent::validateForm($form, $form_state);
      
-    if(!preg_match('/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-F]{2})$/',$form_state->getValue('Mac_Address'))) {
-      $form_state->setErrorByName('Mac_Address',"L'adresse' '".$form_state->getValue('Mac_Address')."' n'est pas valide");
+    if(!preg_match('/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/',$form_state->getValue('Mac_Address'))) {
+      $form_state->setErrorByName('Mac_Address',"Mac '".$form_state->getValue('Mac_Address')."' should be like XX:XX:XX:XX:XX:XX");
     }
 
-    if(!preg_match('/^(\+212|0)([ \-_]*)(\d[ \-_]*){9}$/',$form_state->getValue('Numero'))) {
+    if(!empty($form_state->getValue('Numero')) && !preg_match('/^(\+212|0)([ \-_]*)(\d[ \-_]*){9}$/',$form_state->getValue('Numero'))) {
       $form_state->setErrorByName('Numero',"the number '".$form_state->getValue('Numero')."'should be like:+212 6 ** ** ** ** ou 06 ** ** ** **");
     }
    
