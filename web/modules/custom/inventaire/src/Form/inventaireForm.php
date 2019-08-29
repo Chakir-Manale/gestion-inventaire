@@ -227,14 +227,10 @@ class inventaireForm extends FormBase {
         $form_state->setErrorByName('prenom_collab',"Le prenom '".$form_state->getValue('prenom_collab')."' n'est pas valide");
     }
     
-    if(!preg_match('/^[a-zA-Z ]+$/',$form_state->getValue('marque'))) {
-        $form_state->setErrorByName('marque',"La marque '".$form_state->getValue('marque')."' n'est pas valide");
-    }  
-
     if(!preg_match('/^[0-9]{1,3}$/',$form_state->getValue('RAM'))) {
         $form_state->setErrorByName('RAM',"La RAM '".$form_state->getValue('RAM')."' n'est pas valide");
     }
-    if(!preg_match('/^[0-9A-Za-z]+$/',$form_state->getValue('ID'))) {
+    if(!preg_match('/^[0-9 ]+$/',$form_state->getValue('ID'))) {
         $form_state->setErrorByName('ID'," l'ID '".$form_state->getValue('ID')."' n'est pas valide");
     }
   }
