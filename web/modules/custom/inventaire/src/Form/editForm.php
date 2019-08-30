@@ -26,6 +26,9 @@ class editForm extends FormBase  {
   {
      $node = Node::load($id); 
 #REGION 
+          /* id: c'est le nid (node id) sert a accedez a une node et extraire ses attributs(fields)
+           * pour cela il est declarer hidden 
+           */
         $form['id'] = [
           '#type' => 'hidden',
           '#title' => $this->t('nid :'),

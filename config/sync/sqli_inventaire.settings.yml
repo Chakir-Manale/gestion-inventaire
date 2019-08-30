@@ -5,8 +5,8 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://logo_0.png'
+  path: themes/custom/sqli_inventaire/logo.png
 favicon:
   use_default: 0
-  path: 'public://logoInvt.png'
+  path: themes/custom/sqli_inventaire/logoInvt.png
   mimetype: image/png

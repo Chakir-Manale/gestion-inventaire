@@ -17,6 +17,7 @@
     }
     .gs-article_img{
         width:34rem;
+        margin-left: 8rem;
     }
     .gs-menu_item{
         width: 8rem;
@@ -26,9 +27,9 @@
         display: block;
     }
     .gs-tasks-block{
+        
         margin-left: 4rem;
         width: 45.5rem;
-       
         .gs-menu_item{
             width: 20rem;
         }
@@ -43,6 +44,11 @@
     .gs-Deleteform_fieldset {
         width: 40rem;
     }
+    .gs-homepage-btns{
+        width: 10rem;
+        margin-left: 6rem;
+    }
+
 }//@media (max-width: 700px) 
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
@@ -81,4 +87,9 @@
     .gs-form_fieldset{
         width: 60rem;
     }
+    .gs-homepage-btns{
+        display: inline-block;
+    }
+
 }//@media 
+@media (min-width: 1200px) {   .container {    max-width: 65%; } }

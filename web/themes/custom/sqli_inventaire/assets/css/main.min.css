@@ -487,6 +487,10 @@ i.fa {
   font-size: 1.8rem;
   font-family: sans-serif; }
 
+.table-scroll {
+  max-width: 100%;
+  overflow: scroll; }
+
 @media only screen and (max-width: 700px) {
   body {
     margin: 0;
@@ -497,7 +501,8 @@ i.fa {
     margin: 0;
     padding: 0; }
   .gs-article_img {
-    width: 34rem; }
+    width: 34rem;
+    margin-left: 8rem; }
   .gs-menu_item {
     width: 8rem; }
   .gs-slogan {
@@ -513,7 +518,10 @@ i.fa {
   .gs-form_fieldset {
     width: 30rem; }
   .gs-Deleteform_fieldset {
-    width: 40rem; } }
+    width: 40rem; }
+  .gs-homepage-btns {
+    width: 10rem;
+    margin-left: 6rem; } }
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
   body {
@@ -539,7 +547,13 @@ i.fa {
     width: 17rem;
     font-size: 2.5rem; }
   .gs-form_fieldset {
-    width: 60rem; } }
+    width: 60rem; }
+  .gs-homepage-btns {
+    display: inline-block; } }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 65%; } }
 
 .gs-title {
   text-align: center; }
